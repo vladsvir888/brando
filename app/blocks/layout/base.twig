@@ -1,0 +1,9 @@
+{% include "../head/head.twig" %}
+{% include "../header/header.twig" with {
+  header: {
+    auth: true,
+  }
+} %}
+{% block content %}{% endblock %}
+{# {% include "../footer/footer.twig" %} #}
+{% include "../link/link.twig" %}

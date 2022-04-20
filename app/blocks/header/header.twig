@@ -1,0 +1,74 @@
+<header class="header">
+  <div class="container header__container">
+    <div class="header__burger">
+      <span class="header__burger-item"></span>
+      <span class="header__burger-item"></span>
+      <span class="header__burger-item"></span>
+    </div>
+    <div class="header__start">
+      <a class="header__logo-link" href="#">
+        <img class="header__logo" src="./assets/images/icons/logo.svg" alt="logo">
+      </a>
+    </div>
+    <div class="header__center">
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Каталог</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">О нас</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Акции</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__end">
+
+      {% if header.auth %}
+        <button class="header__login-btn">
+          <svg class="header__icon header__login-icon" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#login"></use>
+          </svg>
+        </button>
+        <div class="header__auth-block">
+          <svg class="header__icon header__auth-icon" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#user"></use>
+          </svg>
+          <div class="header__auth-inner">
+            <span class="header__auth-text">Личный кабинет</span>
+            <span class="header__auth-name">Анастасии Игоревны</span>
+          </div>
+        </div>
+      {% else %}
+        <button class="header__entry-btn header__btn">
+          <svg class="header__icon" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#user"></use>
+          </svg>
+        </button>
+      {% endif %}
+
+      <a href="#" class="header__favourite">
+        <svg class="header__icon header__favourite-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#heart"></use>
+        </svg>
+        <div class="header__favourite-num header__nums">
+          <span>12</span>
+        </div>
+      </a>
+      <a href="#" class="header__basket">
+        <svg class="header__icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#basket"></use>
+        </svg>
+        <div class="header__basket-num header__nums">
+          <span>4</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</header>

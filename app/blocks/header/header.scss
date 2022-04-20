@@ -1,0 +1,225 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 8rem;
+  background-color: var(--black);
+
+  @extend %flex-center-y;
+
+  &__container {
+    @extend %flex-between;
+    width: 100%;
+  }
+
+  &__logo {
+    width: 21rem;
+    height: 3.6rem;
+
+    @media (max-width: $md) {
+      width: 15rem;
+    }
+  }
+
+  // menu
+  &__center {
+    @media (max-width: $lg) {
+      display: none;
+    }
+  }
+
+  &__menu-list {
+    @extend %flex-center-y;
+
+    > * {
+      &:not(:last-child) {
+        padding-right: 6rem;
+      }
+    }
+  }
+
+  &__menu-link {
+    position: relative;
+
+    @extend %text-18;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    transition: color 0.5s;
+
+    &::before {
+      position: absolute;
+      bottom: -0.2rem;
+      left: 0;
+      width: 0;
+      height: 0.2rem;
+      content: '';
+      background-color: var(--green);
+      transition: width 0.5s;
+    }
+
+    &:hover {
+      color: var(--green);
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__end {
+    @extend %flex-center-y;
+
+    > * {
+      &:not(:last-child) {
+        padding-right: 4rem;
+
+        @media (max-width: $md) {
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+
+  &__favourite,
+  &__basket {
+    @extend %flex-center-y;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+
+        @media (max-width: $md) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &:hover {
+      .header__nums {
+        border: 0.2rem solid var(--green);
+        color: var(--green);
+      }
+
+      .header__icon {
+        fill: var(--green);
+      }
+    }
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      .header__icon {
+        fill: var(--green);
+      }
+    }
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: var(--white);
+    transition: fill 0.3s;
+  }
+
+  &__favourite-icon {
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
+
+  &__nums {
+    border: 0.2rem solid var(--white);
+    border-radius: 100%;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: var(--white);
+    transition: color 0.3s, border 0.3s;
+
+    @extend %text-12;
+    @extend %flex-center-xy;
+  }
+
+  &__basket-num {
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
+
+  // burger
+  &__burger {
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 2.3rem;
+    height: 1.6rem;
+    cursor: pointer;
+
+    @media (max-width: $lg) {
+      display: flex;
+    }
+  }
+
+  &__burger-item {
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--white);
+    border-radius: 0.3rem;
+    pointer-events: none;
+  }
+
+  // auth-block
+  &__auth-block {
+    @extend %text-14;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+
+    @extend %flex-center-y;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
+
+  &__auth-inner {
+    @extend %flex-column;
+
+    > * {
+      &:not(:last-child) {
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__auth-icon {
+    fill: var(--green);
+  }
+
+  &__login-btn {
+    border: none;
+    background-color: transparent;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__login-icon {
+    stroke: var(--white);
+    fill: none;
+  }
+}
