@@ -31,22 +31,29 @@
     <div class="header__end">
 
       {% if header.auth %}
-        <button class="header__login-btn">
-          <svg class="header__icon header__login-icon" viewBox="0 0 100 100">
-            <use xlink:href="./assets/images/sprite.svg#login"></use>
-          </svg>
-        </button>
-        <div class="header__auth-block">
-          <svg class="header__icon header__auth-icon" viewBox="0 0 100 100">
-            <use xlink:href="./assets/images/sprite.svg#user"></use>
-          </svg>
-          <div class="header__auth-inner">
-            <span class="header__auth-text">Личный кабинет</span>
-            <span class="header__auth-name">Анастасии Игоревны</span>
+        <div class="header__cabinet-wrap js-cabinet-btn">
+          <button class="header__cabinet-btn">
+            <svg class="header__icon header__login-icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#login"></use>
+            </svg>
+          </button>
+          <div class="header__cabinet-block">
+            <svg class="header__icon header__cabinet-icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#user"></use>
+            </svg>
+            <div class="header__cabinet-inner">
+              <span class="header__cabinet-text">Личный кабинет</span>
+              <span class="header__cabinet-name">Анастасии Игоревны</span>
+            </div>
           </div>
+          {% include "../popups/popups.twig" with {
+            popup: {
+              cabinetPopup: true,
+            }
+          } %}
         </div>
       {% else %}
-        <button class="header__entry-btn header__btn">
+        <button class="header__entry-btn header__btn" data-popup="#signin-popup">
           <svg class="header__icon" viewBox="0 0 100 100">
             <use xlink:href="./assets/images/sprite.svg#user"></use>
           </svg>

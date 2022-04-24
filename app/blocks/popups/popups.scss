@@ -1,0 +1,250 @@
+// cabinet-popup
+.cabinet-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  background-color: var(--black);
+  padding: 2rem;
+  width: 27rem;
+  border-top: 0.2rem solid var(--green);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+
+  > * {
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__list {
+    > * {
+      padding: 1rem 1.5rem;
+      border-bottom: 0.1rem solid var(--gray2);
+    }
+  }
+
+  &__item {
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__link {
+    @extend %text-14;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+
+  &__exit-btn {
+    @extend %text-16;
+    color: var(--white);
+    font-weight: 500;
+    border: none;
+    background-color: var(--gray2);
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.cabinet-popup.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+// common styles for entry popups
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  &__wrap {
+    position: absolute;
+    background-color: var(--black);
+    width: 50rem;
+    padding: 6rem;
+
+    @extend %pos-center-xy;
+    @extend %flex-column-center-xy;
+
+    @media (max-width: $md) {
+      width: 35rem;
+      padding: 2rem;
+    }
+  }
+
+  &__icon-wrap {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 100%;
+    background-color: var(--gray2);
+
+    @extend %flex-center-xy;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    fill: var(--green);
+  }
+
+  &__title {
+    @extend %text-20;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__subtitle {
+    @extend %text-12;
+
+    font-weight: 400;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    width: 100%;
+
+    @extend %flex-column;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__forget-link {
+    @extend %text-14;
+
+    color: var(--green);
+    font-weight: 400;
+  }
+
+  &__btn {
+    @extend %text-16;
+
+    font-weight: 700;
+    color: var(--white);
+    border: none;
+    background-color: var(--green);
+    padding: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--hover-green);
+    }
+
+    &:active {
+      background-color: var(--active-green);
+    }
+  }
+
+  &__noacc-block {
+    width: 100%;
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__noacc-title {
+    @extend %text-20;
+
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__noacc-link {
+    border: none;
+    background-color: var(--gray2);
+
+    @extend %text-16;
+    color: var(--white);
+    font-weight: 700;
+    width: 100%;
+    padding: 1rem;
+    display: inline-block;
+    text-align: center;
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__close-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: var(--gray3);
+    pointer-events: none;
+  }
+
+  &__passw-input {
+    padding-right: 5rem;
+  }
+
+  &__passw-block {
+    position: relative;
+  }
+
+  &__passw-toggle {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 2rem;
+
+    @extend %pos-center-y;
+  }
+
+  &__passw-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: var(--gray3);
+    pointer-events: none;
+
+    &--hide {
+      stroke: var(--gray3);
+    }
+  }
+}
+
+.popup.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}

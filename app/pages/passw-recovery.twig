@@ -1,5 +1,5 @@
-{% include "../head/head.twig" %}
-{% include "../popups/popups.twig" with {
+{% include "../blocks/head/head.twig" %}
+{% include "../blocks/popups/popups.twig" with {
   popup: {
     sign: true,
     id: "signin-popup",
@@ -16,7 +16,7 @@
     isPassw: true,
   }
 } %}
-{% include "../popups/popups.twig" with {
+{% include "../blocks/popups/popups.twig" with {
   popup: {
     sign: true,
     id: "signup-popup",
@@ -33,10 +33,11 @@
     isPassw: true,
   }
 } %}
-{% include "../popups/popups.twig" with {
+{% include "../blocks/popups/popups.twig" with {
   popup: {
     sign: true,
     id: "passw-recovery-popup",
+    active: "is-active",
     title: "Восстановление пароля",
     noAcc: false,
     btnText: "Отправить",
@@ -50,11 +51,9 @@
     repeatPassw: false,
   }
 } %}
-{% include "../header/header.twig" with {
+{% include "../blocks/header/header.twig" with {
   header: {
     auth: false,
   }
 } %}
-{% block content %}{% endblock %}
-{% include "../footer/footer.twig" %}
-{% include "../link/link.twig" %}
+{% include "../blocks/link/link.twig" %}

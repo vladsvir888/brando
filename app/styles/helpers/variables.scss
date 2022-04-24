@@ -1,6 +1,7 @@
 // @media
 $lg: 1024px;
 $md: 767px;
+$sm: 500px;
 
 // extends
 %cover {
@@ -40,6 +41,11 @@ $md: 767px;
 %text-18 {
   font-size: 1.8rem;
   line-height: 2.8rem;
+}
+
+%text-20 {
+  font-size: 2rem;
+  line-height: 3rem;
 }
 
 %text-24 {
@@ -118,4 +124,11 @@ $md: 767px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+%flex-column-center-xy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

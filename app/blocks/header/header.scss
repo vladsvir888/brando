@@ -175,7 +175,13 @@
   }
 
   // auth-block
-  &__auth-block {
+  &__cabinet-wrap {
+    position: relative;
+    height: 8rem;
+    display: flex;
+  }
+
+  &__cabinet-block {
     @extend %text-14;
     color: var(--white);
     text-transform: uppercase;
@@ -195,7 +201,7 @@
     }
   }
 
-  &__auth-inner {
+  &__cabinet-inner {
     @extend %flex-column;
 
     > * {
@@ -205,11 +211,11 @@
     }
   }
 
-  &__auth-icon {
+  &__cabinet-icon {
     fill: var(--green);
   }
 
-  &__login-btn {
+  &__cabinet-btn {
     border: none;
     background-color: transparent;
 

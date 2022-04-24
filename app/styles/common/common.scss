@@ -23,6 +23,8 @@ html {
   --white: #fff;
   --black: #2c2c2c;
   --gray: #898a8e;
+  --gray2: #474646;
+  --gray3: #898a8e;
   --red: #e11818;
   --padding-bottom: 3rem;
   --container-padding: 0 2rem;
@@ -88,4 +90,49 @@ img {
   margin: -1px;
 
   clip: rect(0 0 0 0);
+}
+
+// styles for first screen page
+.progress {
+  padding-top: 20rem;
+
+  @media (max-width: $lg) {
+    padding-top: 8rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 2rem 4rem;
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__link {
+    @extend %text-24;
+    color: var(--black);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+}
+
+// default styles of popup-input
+.popup-input {
+  border: 0.2rem solid var(--gray2);
+  background-color: transparent;
+  color: var(--white);
+  padding: 1rem 2rem;
+  width: 100%;
+
+  @extend %text-16;
+  font-weight: 400;
+
+  &::placeholder {
+    color: var(--white);
+  }
 }

@@ -1,0 +1,89 @@
+{% if popup.cabinetPopup %}
+  <div class="cabinet-popup js-cabinet-popup">
+    <ul class="cabinet-popup__list">
+      <li class="cabinet-popup__item">
+        <a href="#" class="cabinet-popup__link">Мой профиль</a>
+      </li>
+      <li class="cabinet-popup__item">
+        <a href="#" class="cabinet-popup__link">Активные заказы</a>
+      </li>
+      <li class="cabinet-popup__item">
+        <a href="#" class="cabinet-popup__link">Завершенные заказы</a>
+      </li>
+      <li class="cabinet-popup__item">
+        <a href="#" class="cabinet-popup__link">Отложенные заказы</a>
+      </li>
+      <li class="cabinet-popup__item">
+        <a href="#" class="cabinet-popup__link">Избранное</a>
+      </li>
+    </ul>
+    <button class="cabinet-popup__exit-btn">Выйти</button>
+  </div>
+{% elseif popup.sign %}
+  <div id="{{ popup.id }}" class="popup js-popup {{ popup.active }}">
+    <div class="popup__wrap">
+      <button class="popup__btn-close js-popup-close">
+        <svg class="popup__close-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#popup-close"></use>
+        </svg>
+      </button>
+      <div class="popup__icon-wrap">
+        <svg class="popup__icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#popup-success"></use>
+        </svg>
+      </div>
+      <div class="popup__title">{{ popup.title }}</div>
+
+      {% if popup.isSubtitle %}
+        <div class="popup__subtitle">
+          Пожалуйста, введите ваш адрес электронной почты, на который мы отправим ссылку для восстановления пароля
+        </div>
+      {% endif %}
+
+      <form action="/" class="popup__form" autocomplete="off">
+        {% if popup.isEmail %}
+          <input class="popup-input" type="text" name="email" placeholder="Введите email">
+        {% endif %}
+
+        {% if popup.isPhone %}
+          <input class="popup-input phone" type="text" name="phone" placeholder="{{ popup.placeholderPhone }}">
+        {% endif %}
+
+        {% if popup.isPassw %}
+          <div class="popup__passw-block">
+            <input class="popup-input popup__passw-input" type="password" name="passw" placeholder="{{ popup.placeholderPassw }}">
+            <button class="popup__passw-toggle js-passw-toggle">
+              <svg class="popup__passw-icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#show-passw"></use>
+              </svg>
+            </button>
+          </div>
+        {% endif %}
+
+        {% if popup.repeatPassw %}
+          <div class="popup__passw-block">
+            <input class="popup-input" type="password" name="passw_repeat" placeholder="Повторите пароль">
+            <button class="popup__passw-toggle js-passw-toggle">
+              <svg class="popup__passw-icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#show-passw"></use>
+              </svg>
+            </button>
+          </div>
+        {% endif %}
+
+        {% if popup.forgetPassw %}
+          <a class="popup__forget-link" href="/" data-popup="#passw-recovery-popup">Забыли пароль?</a>
+        {% endif %}
+
+        <button class="popup__btn" type="submit">{{ popup.btnText }}</button>
+      </form>
+
+      {% if popup.noAcc %}
+        <div class="popup__noacc-block">
+          <div class="popup__noacc-title">Еще нет аккаунта?</div>
+          <a class="popup__noacc-link" href="/" data-popup="#signup-popup">Зарегистрироваться</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
