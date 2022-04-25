@@ -1,0 +1,30 @@
+.breadcrumbs {
+  padding: 2rem 0 3rem;
+
+  @extend %flex-center-y;
+  flex-wrap: wrap;
+
+  > * {
+    &:not(:last-child) {
+      margin-right: 1rem;
+      padding-right: 2rem;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '-';
+      }
+    }
+  }
+
+  &__item {
+    @extend %text-14;
+    color: var(--gray3);
+  }
+
+  &__link {
+    color: var(--black);
+  }
+}

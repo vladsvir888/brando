@@ -1,0 +1,28 @@
+<div class="swiper about-slider js-about-slider">
+  <div class="swiper-wrapper">
+    {% for slide in slider.slides %}
+      <div class="swiper-slide about-slider__slide">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ slide.webpImg }}">
+          <img class="lazy about-slider__img" src="./assets/images/pixel.png" data-src="{{ slide.jpgImg }}" alt="img">
+        </picture>
+        <div class="about-slider__content">
+          <h3 class="about-slider__title">{{ slide.title }}</h3>
+          <div class="about-slider__descr">{{ slide.descr }}</div>
+          <div class="about-slider__btns">
+            <div class="swiper-button-prev">
+              <svg class="about-slider__arrow-icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#arrow-prev"></use>
+              </svg>
+            </div>
+            <div class="swiper-button-next">
+              <svg class="about-slider__arrow-icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#arrow-next"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

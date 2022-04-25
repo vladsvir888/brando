@@ -25,6 +25,7 @@ html {
   --gray: #898a8e;
   --gray2: #474646;
   --gray3: #898a8e;
+  --gray4: #f8f8f8;
   --red: #e11818;
   --padding-bottom: 3rem;
   --container-padding: 0 2rem;
@@ -140,5 +141,21 @@ img {
 
   &::placeholder {
     color: var(--white);
+  }
+}
+
+.section-title {
+  @extend %text-40;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--black);
+  padding-bottom: 3rem;
+}
+
+.pb6 {
+  padding-bottom: 6rem;
+
+  @media (max-width: $md) {
+    padding-bottom: 3rem;
   }
 }

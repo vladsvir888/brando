@@ -1,0 +1,67 @@
+.about-slider {
+  &__slide {
+    display: grid;
+    grid-template-columns: 64rem 1fr;
+    gap: 4rem;
+    padding: 6rem 0;
+    height: 50rem;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140rem;
+      height: 100%;
+      z-index: -1;
+      background-color: var(--gray4);
+      content: '';
+    }
+  }
+
+  &__content {
+    @extend %flex-column;
+    padding-top: 8rem;
+  }
+
+  &__title {
+    @extend %text-40;
+    font-weight: 400;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__descr {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    max-width: 68rem;
+    flex-grow: 1;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: static;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: none;
+  }
+
+  &__btns {
+    @extend %flex-center-y;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__img {
+    @extend %cover;
+  }
+}

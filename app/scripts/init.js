@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   app.popups.init(); // blocks/popups
   app.visibilityPassw.init(); // blocks/popups
   app.accordion.init(); // blocks/footer
-  app.promoSlider.init(); // block/main/promo-slider
+  app.promoSlider.init(); // blocks/main/promo-slider
+  app.aboutSlider.init(); // blocks/about/about-slider
 
   const phones = document.querySelectorAll('.phone');
 

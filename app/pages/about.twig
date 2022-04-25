@@ -1,0 +1,86 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+<main class="about">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        text1: 'Главная',
+        text2: 'О нас',
+      }
+    } %}
+    <section class="about-section pb6">
+      <h1 class="about-section__title section-title">О нас</h1>
+      <div class="about-section__top-wrap pb6">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/about/01.webp">
+          <img class="lazy about-section__top-img" src="./assets/images/pixel.png" data-src="./assets/images/about/01.jpg" alt="img">
+        </picture>
+        <div class="about-section__top-content">
+          <h3 class="about-section__top-title">
+            Добро пожаловать на <span>Brando</span>
+          </h3>
+          <div class="about-section__top-descr">
+            Впечатление вместо надоевших клише, жизнь на полную вместо движения по течению. Уже много лет мы создаем подарки-впечатления, вызывающие то самое «я тоже хочу» среди окружающих, поэтому знаем, о чем идет речь. Вещи никогда не заменят настоящих вау-впечатлений, которые воодушевляют дарителей и удивляют получателей. Поэтому наша цель — помогать каждому находить свое особенное «вау» и возвращаться за добавкой.
+          </div>
+          <div class="about-section__top-text">
+            15 лет мы стремимся сделать для Вас шопинг удобным и доступным
+          </div>
+          <blockquote class="about-section__quote">
+            <svg class="about-section__quote-icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#quote"></use>
+            </svg>
+            <p class="about-section__quote-text">
+              “ Мы любим свою работу. Для нас важно, чтобы каждый пациент получил высококвалифицированную помощь наших врачей-стоматологов, а также высококлассный сервис европейского уровня”
+            </p>
+          </blockquote>
+        </div>
+      </div>
+      {% include "../blocks/block-text/block-text.twig" %}
+      <ul class="about-section__statistics">
+        <li class="about-section__statistics-item">
+          <span class="about-section__statistics-num">7258</span>
+          <span class="about-section__statistics-text">пунктов выдачи</span>
+        </li>
+        <li class="about-section__statistics-item">
+          <span class="about-section__statistics-num">500</span>
+          <span class="about-section__statistics-text">брендов на сайте</span>
+        </li>
+        <li class="about-section__statistics-item">
+          <span class="about-section__statistics-num">32 000</span>
+          <span class="about-section__statistics-text">заказов в день</span>
+        </li>
+        <li class="about-section__statistics-item">
+          <span class="about-section__statistics-num">7000</span>
+          <span class="about-section__statistics-text">товаров на складе</span>
+        </li>
+      </ul>
+    </section>
+    <section class="about__club-program pb6">
+      {% include "../blocks/about/about-slider/about-slider.twig" with {
+        slider: {
+          slides: [
+            {
+              jpgImg: './assets/images/about/02.jpg',
+              webpImg: './assets/images/about/02.webp',
+              title: 'Клубная программа',
+              descr: 'Покупайте товары ваших любимых брендов на сайте или в более чем 150 магазинах-партнерах и получайте до 15% вознаграждения за каждую совершенную покупку',
+            },
+            {
+              jpgImg: './assets/images/about/02.jpg',
+              webpImg: './assets/images/about/02.webp',
+              title: 'Программа лояльности',
+              descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ex!',
+            },
+            {
+              jpgImg: './assets/images/about/02.jpg',
+              webpImg: './assets/images/about/02.webp',
+              title: 'Бонусная программа',
+              descr: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni nisi, harum eligendi cum dolore consectetur!',
+            },
+          ]
+        }
+      } %}
+    </section>
+  </div>
+</main>
+{% endblock %}
