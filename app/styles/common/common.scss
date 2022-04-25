@@ -82,6 +82,12 @@ img {
   padding: var(--container-padding);
 }
 
+.second-container {
+  max-width: var(--container-width-2);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
 .visually-hidden {
   position: absolute;
 

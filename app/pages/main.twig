@@ -1,1 +1,106 @@
 {% extends "../blocks/layout/base.twig" %}
+{% block content %}
+<main class="main">
+  <h1 class="visually-hidden">Brando - обувь, сумки, одежда</h1>
+  {% include "../blocks/main/promo-slider/promo-slider.twig" with {
+    promoSlider: {
+      jpgImg: './assets/images/main/01.jpg',
+      webpImg: './assets/images/main/01.webp',
+      jpgImg2: './assets/images/main/02.jpg',
+      webpImg2: './assets/images/main/02.webp',
+      slideTitle: 'Новая коллeкция',
+      slideSubtitle: 'Весна 2022',
+      slideTitle2: 'Новая коллекция',
+      slideSubtitle2: 'Осень 2022',
+    }
+  } %}
+  <section class="main__collections">
+    <div class="second-container">
+      <div class="main__collections-wrap">
+        <div class="main__collection">
+          <div class="main__collection-img">
+            <picture>
+              <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/main/03.webp">
+              <img class="lazy" src="./assets/images/pixel.png" data-src="./assets/images/main/03.jpg" alt="img">
+            </picture>
+          </div>
+          <div class="main__collection-content">
+            <h2 class="main__collection-title">Женская коллекция</h2>
+            <ul class="main__collection-list">
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link main__collection-link--border-right">Обувь</a>
+              </li>
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link main__collection-link--border-right">Сумки</a>
+              </li>
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link">Одежда</a>
+              </li>
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link">Верхняя одежда</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main__collection">
+          <div class="main__collection-img">
+            <picture>
+              <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/main/04.webp">
+              <img class="lazy" src="./assets/images/pixel.png" data-src="./assets/images/main/04.jpg" alt="img">
+            </picture>
+          </div>
+          <div class="main__collection-content">
+            <h2 class="main__collection-title">Мужская коллекция</h2>
+            <ul class="main__collection-list">
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link main__collection-link--border-right">Обувь</a>
+              </li>
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link main__collection-link--border-right">Сумки</a>
+              </li>
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link">Одежда</a>
+              </li>
+              <li class="main__collection-item">
+                <a href="#" class="main__collection-link">Верхняя одежда</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="main__trends">
+    <div class="second-container">
+      <div class="main__trends-wrap">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/main/05.webp">
+          <img class="lazy main__trends-img" src="./assets/images/pixel.png" data-src="./assets/images/main/05.jpg" alt="img">
+        </picture>
+        <div class="main__trends-content">
+          <h2 class="main__trends-title">Тренды сезона</h2>
+          <div class="main__trends-descr">
+            Мода циклична, а модные тенденции часто делают “круг почета”. Вот и сапоги-чулки и ботфорты вновь маршировали по всем Неделям моды - вдохновение для осенне-зимних образов можно черпать у Saint Laurent и Valentino
+          </div>
+          <a href="#" class="main__trends-link">
+            <svg class="main__trends-icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#arrow"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "../blocks/main/promo-slider/promo-slider.twig" with {
+    promoSlider: {
+      jpgImg: './assets/images/main/01.jpg',
+      webpImg: './assets/images/main/01.webp',
+      jpgImg2: './assets/images/main/02.jpg',
+      webpImg2: './assets/images/main/02.webp',
+      slideSubtitle: 'Мы лучшие в моде!',
+      slideDescr: 'Мода циклична, а модные тенденции часто делают “круг почета”. Вот и сапоги-чулки и ботфорты вновь маршировали по всем Неделям моды - вдохновение для осенне-зимних образов можно черпать у Saint Laurent и Valentino',
+      slideSubtitle2: 'Мы лучшие в моде!',
+    }
+  } %}
+</main>
+{% endblock %}

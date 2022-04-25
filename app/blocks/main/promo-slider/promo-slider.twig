@@ -1,0 +1,77 @@
+<div class="swiper promo-slider js-promo-slider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide promo-slider__slide">
+      <div class="promo-slider__img-block">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ promoSlider.webpImg }}">
+          <img class="promo-slider__img swiper-lazy" src="./assets/images/pixel.png" data-src="{{ promoSlider.jpgImg }}" alt="img">
+        </picture>
+      </div>
+      <div class="promo-slider__content-block">
+        {% if promoSlider.slideTitle is defined %}
+          <h2 class="promo-slider__title">{{ promoSlider.slideTitle }}</h2>
+        {% endif %}
+        <div class="promo-slider__subtitle">{{ promoSlider.slideSubtitle }}</div>
+        {% if promoSlider.slideDescr is defined %}
+          <div class="promo-slider__descr">{{ promoSlider.slideDescr }}</div>
+        {% endif %}
+      </div>
+      <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+    </div>
+    <div class="swiper-slide promo-slider__slide">
+      <div class="promo-slider__img-block">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ promoSlider.webpImg2 }}">
+          <img class="promo-slider__img swiper-lazy" src="./assets/images/pixel.png" data-src="{{ promoSlider.jpgImg2 }}" alt="img">
+        </picture>
+      </div>
+      <div class="promo-slider__content-block">
+        {% if promoSlider.slideTitle2 is defined %}
+          <h2 class="promo-slider__title">{{ promoSlider.slideTitle2 }}</h2>
+        {% endif %}
+        <div class="promo-slider__subtitle">{{ promoSlider.slideSubtitle2 }}</div>
+        {% if promoSlider.slideDescr is defined %}
+          <div class="promo-slider__descr">{{ promoSlider.slideDescr }}</div>
+        {% endif %}
+      </div>
+      <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+    </div>
+    <div class="swiper-slide promo-slider__slide">
+      <div class="promo-slider__img-block">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ promoSlider.webpImg }}">
+          <img class="promo-slider__img swiper-lazy" src="./assets/images/pixel.png" data-src="{{ promoSlider.jpgImg }}" alt="img">
+        </picture>
+      </div>
+      <div class="promo-slider__content-block">
+        {% if promoSlider.slideTitle is defined %}
+          <h2 class="promo-slider__title">{{ promoSlider.slideTitle }}</h2>
+        {% endif %}
+        <div class="promo-slider__subtitle">{{ promoSlider.slideSubtitle }}</div>
+        {% if promoSlider.slideDescr is defined %}
+          <div class="promo-slider__descr">{{ promoSlider.slideDescr }}</div>
+        {% endif %}
+      </div>
+      <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+    </div>
+    <div class="swiper-slide promo-slider__slide">
+      <div class="promo-slider__img-block">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ promoSlider.webpImg2 }}">
+          <img class="promo-slider__img swiper-lazy" src="./assets/images/pixel.png" data-src="{{ promoSlider.jpgImg2 }}" alt="img">
+        </picture>
+      </div>
+      <div class="promo-slider__content-block">
+        {% if promoSlider.slideTitle2 is defined %}
+          <h2 class="promo-slider__title">{{ promoSlider.slideTitle2 }}</h2>
+        {% endif %}
+        <div class="promo-slider__subtitle">{{ promoSlider.slideSubtitle2 }}</div>
+        {% if promoSlider.slideDescr is defined %}
+          <div class="promo-slider__descr">{{ promoSlider.slideDescr }}</div>
+        {% endif %}
+      </div>
+      <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   app.cabinetPopup.init(); // blocks/popups
   app.popups.init(); // blocks/popups
   app.visibilityPassw.init(); // blocks/popups
+  app.accordion.init(); // blocks/footer
+  app.promoSlider.init(); // block/main/promo-slider
 
   const phones = document.querySelectorAll('.phone');
 
