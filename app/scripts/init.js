@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   app.accordion.init(); // blocks/footer
   app.promoSlider.init(); // blocks/main/promo-slider
   app.aboutSlider.init(); // blocks/about/about-slider
+  app.videoAlert.init(); // blocks/product-characteristics
 
   const phones = document.querySelectorAll('.phone');
 

@@ -81,6 +81,18 @@
         }
       } %}
     </section>
+    <section class="product-characteristics pb6">
+      {% include "../blocks/product-characteristics/product-characteristics.twig" %}
+      <div class="product-characteristics__video-block js-video-block">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/about/03.webp">
+          <img class="lazy product-characteristics__img" src="./assets/images/pixel.png" data-src="./assets/images/about/03.jpg" alt="img">
+        </picture>
+        <svg class="product-characteristics__play-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#play"></use>
+        </svg>
+      </div>
+    </section>
   </div>
 </main>
 {% endblock %}
