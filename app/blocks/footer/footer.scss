@@ -1,6 +1,11 @@
 .footer {
   background: var(--black);
   padding: 10rem 2rem 4rem;
+  margin-top: 15rem;
+
+  @media (max-width: $lg) {
+    margin-top: 4rem;
+  }
 
   > * {
     &:not(:last-child) {
