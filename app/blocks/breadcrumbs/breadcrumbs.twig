@@ -1,6 +1,11 @@
 <ul class="breadcrumbs">
-  <li class="breadcrumbs__item">
-    <a href="#" class="breadcrumbs__link">{{ breadcrumbs.text1 }}</a>
-  </li>
-  <li class="breadcrumbs__item">{{ breadcrumbs.text2 }}</li>
+  {% for breadcrumb in breadcrumbs %}
+    {% if loop.last %}
+      <li class="breadcrumbs__item">{{ breadcrumb }}</li>
+    {% else %}
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">{{ breadcrumb }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>

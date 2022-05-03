@@ -1,0 +1,90 @@
+.section-actions {
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-cards);
+
+    @media (max-width: $lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// карточка с акционным предложением
+.action-card {
+  &:hover {
+    .action-card__title {
+      color: var(--green);
+    }
+
+    .action-card__label {
+      background-color: var(--green);
+      color: var(--white);
+    }
+
+    .action-card__days {
+      color: var(--white);
+    }
+  }
+
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__content {
+    @extend %text-16;
+    max-width: 42rem;
+    position: relative;
+  }
+
+  &__period {
+    color: var(--gray);
+  }
+
+  &__title {
+    color: var(--black);
+    transition: color 0.3s;
+  }
+
+  &__picture {
+    display: block;
+  }
+
+  &__label {
+    @extend %text-14;
+    color: var(--white);
+    text-transform: uppercase;
+    background-color: var(--black);
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: -5rem;
+    right: -6rem;
+
+    @extend %flex-column-center-xy;
+    flex-direction: column;
+    transition: all 0.3s;
+
+    @media (max-width: $lg) {
+      top: -8rem;
+      right: 0;
+    }
+  }
+
+  &__days {
+    @extend %text-30;
+    font-weight: 700;
+    color: var(--green);
+    transition: all 0.3s;
+  }
+
+  &__img {
+    @extend %cover;
+  }
+}

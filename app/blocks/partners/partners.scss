@@ -1,0 +1,262 @@
+.partners {
+  &__info-img {
+    @extend %cover;
+  }
+
+  &__info-wrap {
+    display: grid;
+    grid-template-columns: 64rem 1fr;
+    gap: 4rem;
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__info-content {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__info-title {
+    @extend %text-40;
+    font-weight: 400;
+
+    span {
+      color: var(--green);
+    }
+  }
+
+  &__info-descr {
+    @extend %text-16;
+  }
+
+  &__info-btn {
+    @extend %text-16;
+    font-weight: 700;
+    color: var(--white);
+    border: none;
+    background-color: var(--green);
+    padding: 1.6rem 4rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--hover-green);
+    }
+
+    &:active {
+      background-color: var(--active-green);
+    }
+  }
+
+  &__info-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @media (max-width: $md) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__info-item {
+    border-left: 0.1rem solid var(--green);
+    padding-left: 1rem;
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+
+  &__info-num {
+    @extend %text-28;
+    color: var(--green);
+  }
+
+  &__list-title {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 500;
+  }
+
+  &__list-descr {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--gray);
+  }
+
+  &__service-title {
+    @extend %text-32;
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+
+  &__service-img {
+    @extend %cover;
+  }
+
+  &__service-slider {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 4rem;
+      height: 4rem;
+
+      &::after {
+        content: none;
+      }
+
+      &:hover {
+        .partners__service-arrow {
+          fill: var(--green);
+        }
+      }
+    }
+  }
+
+  &__service-arrow {
+    transition: fill 0.3s;
+  }
+
+  &__socials-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @media (max-width: $md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__socials-item {
+    position: relative;
+
+    &:hover {
+      .partners__socials-label {
+        background-color: var(--green);
+      }
+
+      .partners__socials-arrow {
+        transform: translateX(1rem);
+      }
+    }
+  }
+
+  &__socials-title {
+    @extend %text-36;
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+
+  &__socials-img {
+    @extend %cover;
+  }
+
+  &__socials-text {
+    @extend %text-40;
+    color: var(--white);
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    @extend %flex-center-xy;
+
+    @media (max-width: $lg) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+
+  &__socials-arrow {
+    width: 4rem;
+    height: 4rem;
+    fill: var(--white);
+    margin-left: 2rem;
+    transition: transform 0.3s;
+
+    @media (max-width: $lg) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &__socials-label {
+    position: absolute;
+    bottom: -5rem;
+    right: 2rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--black);
+    transition: background-color 0.3s;
+
+    @extend %flex-center-xy;
+
+    @media (max-width: $lg) {
+      display: none;
+    }
+  }
+
+  &__socials-icon {
+    width: 5rem;
+    height: 5rem;
+    fill: var(--white);
+
+    @media (max-width: $lg) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__brands-slider {
+    padding: 0 1.5rem;
+    height: 10rem;
+
+    .swiper-slide {
+      background-color: var(--gray4);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 4rem;
+      height: 4rem;
+
+      &::after {
+        content: none;
+      }
+
+      &:hover {
+        .partners__service-arrow {
+          fill: var(--green);
+        }
+      }
+    }
+  }
+
+  &__brands-title {
+    @extend %text-36;
+    font-weight: 400;
+    margin-bottom: 3rem;
+
+    span {
+      color: var(--green);
+    }
+  }
+
+  &__brands-img {
+    @extend %cover;
+  }
+}

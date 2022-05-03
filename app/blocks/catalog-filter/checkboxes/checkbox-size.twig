@@ -1,0 +1,13 @@
+{% for checkbox in checkboxes.items %}
+  {% if checkbox.disabled is defined %}
+    <label class="label">
+      <input class="input checkbox-size" type="checkbox" disabled>
+      <span class="checkbox-size-style">{{ checkbox.size }}</span>
+    </label>
+  {% else %}
+    <label class="label">
+      <input class="input checkbox-size" type="checkbox">
+      <span class="checkbox-size-style">{{ checkbox.size }}</span>
+    </label>
+  {% endif %}
+{% endfor %}

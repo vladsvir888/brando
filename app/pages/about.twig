@@ -1,11 +1,17 @@
 {% extends "../blocks/layout/base.twig" %}
 {% block content %}
-<main class="about">
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+    isAboutPage: true,
+  }
+} %}
+<main class="about pt8">
   <div class="container">
     {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
       breadcrumbs: {
-        text1: 'Главная',
-        text2: 'О нас',
+        item1: 'Главная',
+        item2: 'О нас',
       }
     } %}
     <section class="about-section pb6">
@@ -170,7 +176,7 @@
         </div>
       </div>
     </section>
-    <section class="possibilities">
+    <section class="possibilities pb15">
       <h2 class="possibilities__title">
         Для групп товаров, не представленных на сайте Н5
       </h2>
@@ -215,4 +221,5 @@
     </section>
   </div>
 </main>
+{% include "../blocks/footer/footer.twig" %}
 {% endblock %}

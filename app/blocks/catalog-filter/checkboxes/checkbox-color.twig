@@ -1,0 +1,9 @@
+{% for checkbox in checkboxes.items %}
+  <label class="label">
+    <input class="input checkbox-color" type="checkbox">
+    <div class="checkbox-color-wrap">
+      <span class="checkbox-color-style checkbox-color-style--{{ checkbox.color }}"></span>
+    </div>
+    <span class="checkbox-color-style-text">{{ checkbox.text }}</span>
+  </label>
+{% endfor %}

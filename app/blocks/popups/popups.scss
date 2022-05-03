@@ -47,8 +47,6 @@
     @extend %text-16;
     color: var(--white);
     font-weight: 500;
-    border: none;
-    background-color: var(--gray2);
     width: 100%;
     padding: 1rem;
   }
@@ -147,6 +145,15 @@
 
     color: var(--green);
     font-weight: 400;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--hover-green);
+    }
+
+    &:active {
+      color: var(--active-green);
+    }
   }
 
   &__btn {
@@ -188,9 +195,6 @@
   }
 
   &__noacc-link {
-    border: none;
-    background-color: var(--gray2);
-
     @extend %text-16;
     color: var(--white);
     font-weight: 700;
@@ -206,6 +210,12 @@
     right: 4rem;
     border: none;
     background-color: transparent;
+
+    &:hover {
+      .popup__close-icon {
+        fill: var(--green);
+      }
+    }
   }
 
   &__close-icon {
@@ -213,6 +223,7 @@
     height: 1.4rem;
     fill: var(--gray3);
     pointer-events: none;
+    transition: fill 0.3s;
   }
 
   &__passw-input {

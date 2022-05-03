@@ -26,5 +26,14 @@
 
   &__link {
     color: var(--black);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--green);
+    }
+
+    &:active {
+      color: var(--active-green);
+    }
   }
 }

@@ -17,7 +17,7 @@
         <a href="#" class="cabinet-popup__link">Избранное</a>
       </li>
     </ul>
-    <button class="cabinet-popup__exit-btn">Выйти</button>
+    <button class="cabinet-popup__exit-btn btn">Выйти</button>
   </div>
 {% elseif popup.sign %}
   <div id="{{ popup.id }}" class="popup js-popup {{ popup.active }}">
@@ -81,7 +81,7 @@
       {% if popup.noAcc %}
         <div class="popup__noacc-block">
           <div class="popup__noacc-title">Еще нет аккаунта?</div>
-          <a class="popup__noacc-link" href="/" data-popup="#signup-popup">Зарегистрироваться</a>
+          <a class="popup__noacc-link btn" href="/" data-popup="#signup-popup">Зарегистрироваться</a>
         </div>
       {% endif %}
     </div>

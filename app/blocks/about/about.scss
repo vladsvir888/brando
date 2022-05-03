@@ -1,6 +1,4 @@
 .about {
-  padding-top: 8rem;
-
   &__services-title {
     @extend %text-32;
     font-weight: 400;
@@ -204,6 +202,7 @@
 
   &__video-block {
     position: relative;
+    cursor: pointer;
   }
 
   &__play-icon {
@@ -245,13 +244,14 @@
   top: -1rem;
   right: -1rem;
   color: var(--white);
+  transition: color 0.3s;
 
   &:focus {
     box-shadow: none;
   }
 
   &:hover {
-    color: var(--white);
+    color: var(--green);
   }
 }
 
@@ -285,6 +285,7 @@
   &__span {
     width: 1.7rem;
     height: 1.7rem;
+
     @extend %flex-center-xy;
     border: 0.1rem solid var(--green);
     font-size: 1rem;

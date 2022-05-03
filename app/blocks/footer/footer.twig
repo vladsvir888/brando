@@ -1,29 +1,12 @@
 <footer class="footer">
   <div class="footer__top">
     <div class="footer__top-start">
-      <ul class="footer__socials">
-        <li class="footer__social">
-          <a href="#" class="footer__social-link">
-            <svg class="footer__social-icon" viewBox="0 0 100 100">
-              <use xlink:href="./assets/images/sprite.svg#vk"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social">
-          <a href="#" class="footer__social-link">
-            <svg class="footer__social-icon" viewBox="0 0 100 100">
-              <use xlink:href="./assets/images/sprite.svg#insta"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social">
-          <a href="#" class="footer__social-link">
-            <svg class="footer__social-icon" viewBox="0 0 100 100">
-              <use xlink:href="./assets/images/sprite.svg#fb"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
+      {% include "../socials/socials.twig" with {
+        social: {
+          color: "white",
+          background: "gray",
+        }
+      } %}
       <div class="footer__info">
         <div class="footer__address footer__info-item">
           <svg class="footer__info-icon" viewBox="0 0 100 100">
@@ -75,41 +58,20 @@
           </a>
         </div>
       </div>
-      <ul class="footer__socials">
-        <li class="footer__social">
-          <a href="#" class="footer__social-link">
-            <svg class="footer__social-icon" viewBox="0 0 100 100">
-              <use xlink:href="./assets/images/sprite.svg#vk"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social">
-          <a href="#" class="footer__social-link">
-            <svg class="footer__social-icon" viewBox="0 0 100 100">
-              <use xlink:href="./assets/images/sprite.svg#insta"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social">
-          <a href="#" class="footer__social-link">
-            <svg class="footer__social-icon" viewBox="0 0 100 100">
-              <use xlink:href="./assets/images/sprite.svg#fb"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
+      {% include "../socials/socials.twig" with {
+        social: {
+          color: "white",
+          background: "gray",
+        }
+      } %}
     </div>
   </div>
   <div class="footer__center js-footer-wrap">
 
     <div class="footer__categories-inner">
-      <div class="footer__categories-title js-acc-btn">
-        Обувь
-        <button class="footer__acc-btn js-acc-btn">
-          <svg class="footer__plus-icon" viewBox="0 0 100 100">
-            <use xlink:href="./assets/images/sprite.svg#plus"></use>
-          </svg>
-        </button>
+      <div class="footer__categories-title">
+        <a href="#">Обувь</a>
+        <div class="footer__icon-wrap js-acc-btn" aria-label="развернуть"></div>
       </div>
       <ul class="footer__categories">
         <li class="footer__category">
@@ -142,13 +104,9 @@
     </div>
 
     <div class="footer__categories-inner">
-      <div class="footer__categories-title js-acc-btn">
-        Сумки
-        <button class="footer__acc-btn js-acc-btn">
-          <svg class="footer__plus-icon" viewBox="0 0 100 100">
-            <use xlink:href="./assets/images/sprite.svg#plus"></use>
-          </svg>
-        </button>
+      <div class="footer__categories-title">
+        <a href="#">Сумки</a>
+        <div class="footer__icon-wrap js-acc-btn" aria-label="развернуть"></div>
       </div>
       <ul class="footer__categories">
         <li class="footer__category">
@@ -187,13 +145,9 @@
     </div>
 
     <div class="footer__categories-inner">
-      <div class="footer__categories-title js-acc-btn">
-        Одежда
-        <button class="footer__acc-btn js-acc-btn">
-          <svg class="footer__plus-icon" viewBox="0 0 100 100">
-            <use xlink:href="./assets/images/sprite.svg#plus"></use>
-          </svg>
-        </button>
+      <div class="footer__categories-title">
+        <a href="#">Одежда</a>
+        <div class="footer__icon-wrap js-acc-btn" aria-label="развернуть"></div>
       </div>
       <ul class="footer__categories">
         <li class="footer__category">
@@ -235,13 +189,9 @@
     </div>
 
     <div class="footer__categories-inner">
-      <div class="footer__categories-title js-acc-btn">
-        Аксессуары
-        <button class="footer__acc-btn js-acc-btn">
-          <svg class="footer__plus-icon" viewBox="0 0 100 100">
-            <use xlink:href="./assets/images/sprite.svg#plus"></use>
-          </svg>
-        </button>
+      <div class="footer__categories-title">
+        <a href="#">Аксессуары</a>
+        <div class="footer__icon-wrap js-acc-btn" aria-label="развернуть"></div>
       </div>
       <ul class="footer__categories">
         <li class="footer__category">
@@ -283,13 +233,9 @@
     </div>
 
     <div class="footer__categories-inner">
-      <div class="footer__categories-title js-acc-btn">
-        Уходовая косметика
-        <button class="footer__acc-btn js-acc-btn">
-          <svg class="footer__plus-icon" viewBox="0 0 100 100">
-            <use xlink:href="./assets/images/sprite.svg#plus"></use>
-          </svg>
-        </button>
+      <div class="footer__categories-title">
+        <a href="#">Уходовая косметика</a>
+        <div class="footer__icon-wrap js-acc-btn" aria-label="развернуть"></div>
       </div>
       <ul class="footer__categories">
         <li class="footer__category">

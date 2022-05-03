@@ -1,0 +1,21 @@
+{% for card in action.cards %}
+  <a href="#">
+    <article class="action-card">
+      <picture class="action-card__picture">
+        <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ card.webpImg }}">
+        <img class="lazy action-card__img" src="./assets/images/pixel.png" data-src="{{ card.jpgImg }}" alt="img">
+      </picture>
+      <div class="action-card__content">
+        <div class="action-card__period">
+          <time datetime="{{ card.datetime }}">{{ card.period }}</time>
+        </div>
+        <h3 class="action-card__title">{{ card.title }}</h3>
+        <div class="action-card__label">
+          <span>Осталось</span>
+          <span class="action-card__days">{{ card.days }}</span>
+          <span>дней</span>
+        </div>
+      </div>
+    </article>
+  </a>
+{% endfor %}

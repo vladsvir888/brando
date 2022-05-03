@@ -1,0 +1,25 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+    isCatalogPage: true,
+  }
+} %}
+<main class="catalog pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Каталог',
+        item3: 'Обувь'
+      }
+    } %}
+    <section class="catalog-section">
+      <h1 class="section-title">Обувь</h1>
+      {% include "../blocks/catalog-filter/catalog-filter.twig" %}
+    </section>
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

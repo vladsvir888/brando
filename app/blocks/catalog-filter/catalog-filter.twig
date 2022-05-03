@@ -1,0 +1,315 @@
+<form action="/" class="catalog-filter js-catalog-filter">
+  <div class="catalog-filter__top js-grid-filter">
+    <div class="catalog-filter__grid-filter">
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Тип товара
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox.twig" with {
+            checkboxes: {
+              item1: "Кроссовки и кеды",
+              item2: "Ботинки",
+              item3: "Сапоги",
+              item4: "Домашняя обувь",
+              item5: "Сланцы",
+              item6: "Туфли",
+              item7: "Сандали",
+            }
+          } %}
+        </div>
+      </div>
+
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Размер
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown catalog-filter__select-dropdown--sizes js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox-size.twig" with {
+            checkboxes: {
+              items: [
+                {
+                  size: "36",
+                },
+                {
+                  size: "37",
+                },
+                {
+                  size: "38",
+                },
+                {
+                  size: "39",
+                  disabled: true,
+                },
+                {
+                  size: "40",
+                  disabled: true,
+                },
+                {
+                  size: "41",
+                },
+                {
+                  size: "42",
+                },
+                {
+                  size: "43",
+                },
+                {
+                  size: "44",
+                },
+                {
+                  size: "45",
+                  disabled: true,
+                },
+              ]
+            }
+          } %}
+        </div>
+      </div>
+
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Сезон
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox.twig" with {
+            checkboxes: {
+              item1: "Демисезон",
+              item2: "Зима",
+              item3: "Лето",
+              item4: "Мульти",
+            }
+          } %}
+        </div>
+      </div>
+
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Цвет
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox-color.twig" with {
+            checkboxes: {
+              items: [
+                {
+                  color: "red",
+                  text: "Красный"
+                },
+                {
+                  color: "black",
+                  text: "Черный"
+                },
+                {
+                  color: "green",
+                  text: "Зеленый"
+                },
+                {
+                  color: "purple",
+                  text: "Фиолетовый"
+                },
+                {
+                  color: "blue",
+                  text: "Синий"
+                },
+                {
+                  color: "yellow",
+                  text: "Желтый"
+                },
+              ]
+            }
+          } %}
+        </div>
+      </div>
+
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Бренд
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox.twig" with {
+            checkboxes: {
+              item1: "Affex",
+              item2: "Bogner",
+              item3: "Calvin Klein Jeans",
+              item4: "Fratelli Rossetti",
+              item5: "Fred Perry",
+              item6: "Grenson",
+              item7: "Hunter",
+              item8: "Keddo",
+              item9: "Mexx",
+              item10: "Michael Kors",
+              item11: "s.Oliver",
+              item12: "Saucony",
+              item13: "Vans",
+              item14: "Wilson",
+            }
+          } %}
+        </div>
+      </div>
+
+      <button class="catalog-filter__select-btn catalog-filter__btn js-all-filter-btn" type="button">
+        Все фильтры
+        <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#plus"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="catalog-filter__grid-filter catalog-filter__hidden-filter js-hidden-filter">
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Материалы
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox.twig" with {
+            checkboxes: {
+              item1: "Кожа",
+              item2: "Искусственный нубук",
+              item3: "Искусственная замша",
+              item4: "Натуральная замша",
+              item5: "Евромех",
+            }
+          } %}
+        </div>
+      </div>
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Застежка
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox.twig" with {
+            checkboxes: {
+              item1: "Без застежки",
+              item2: "Липучки",
+              item3: "Шнурки",
+            }
+          } %}
+        </div>
+      </div>
+      <div class="catalog-filter__select js-filter-select">
+        <div class="catalog-filter__select-text">
+          <div class="catalog-filter__select-start">
+            Стиль
+          </div>
+          <div class="catalog-filter__select-end">
+            <svg class="catalog-filter__icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="catalog-filter__select-dropdown js-select-dropdown">
+          {% include "../../blocks/catalog-filter/checkboxes/checkbox.twig" with {
+            checkboxes: {
+              item1: "Повседневный",
+              item2: "Деловой",
+            }
+          } %}
+        </div>
+      </div>
+      <button class="catalog-filter__btn catalog-filter__reset-btn js-reset-btn" type="button">
+        Сбросить
+      </button>
+      <button class="catalog-filter__btn catalog-filter__submit-btn" type="submit">
+        Применить
+      </button>
+    </div>
+    <div class="catalog-filter__selected-filter js-selected-filter"></div>
+  </div>
+  <div class="catalog-filter__bottom js-sort-wrap">
+    <div class="catalog-filter__sort-filter js-filter-select">
+      <div class="catalog-filter__sort-text">
+        <div class="catalog-filter__sort-span">Сортировать по:</div>
+        <div class="catalog-filter__sort-param" data-type="По возрастанию цены">Возрастанию цены</div>
+        <svg class="catalog-filter__icon catalog-filter__sort-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+        </svg>
+      </div>
+      <div class="catalog-filter__sort-dropdown">
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="По популярности">По популярности</div>
+        </div>
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="По рейтингу">По рейтингу</div>
+        </div>
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="По возрастанию цены">По возрастанию цены</div>
+        </div>
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="По уменьшению цены">По уменьшению цены</div>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-filter__bottom-text">166 товаров</div>
+    <div class="catalog-filter__sort-filter js-filter-select">
+      <div class="catalog-filter__sort-text">
+        <div class="catalog-filter__sort-span">Показывать по:</div>
+        <div class="catalog-filter__sort-param" data-type="12">12</div>
+        <svg class="catalog-filter__icon catalog-filter__sort-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+        </svg>
+      </div>
+      <div class="catalog-filter__sort-dropdown catalog-filter__sort-dropdown--right">
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="12">12</div>
+        </div>
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="24">24</div>
+        </div>
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="36">36</div>
+        </div>
+        <div class="catalog-filter__sort-option-wrap">
+          <div class="catalog-filter__sort-option" data-type="48">48</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

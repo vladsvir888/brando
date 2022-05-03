@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   app.promoSlider.init(); // blocks/main/promo-slider
   app.aboutSlider.init(); // blocks/about/about-slider
   app.videoAlert.init(); // blocks/product-characteristics
+  app.map.init(); // blocks/contacts
+  app.serviceSlider.init(); // blocks/partners
+  app.brandsSlider.init(); // blocks/partners
+  app.catalogFilter.init(); // blocks/catalog-filter
 
   const phones = document.querySelectorAll('.phone');
 

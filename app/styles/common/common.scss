@@ -22,10 +22,12 @@ html {
   --active-green: #106027;
   --white: #fff;
   --black: #2c2c2c;
+  --black2: #474646;
   --gray: #898a8e;
   --gray2: #474646;
   --gray3: #898a8e;
   --gray4: #f8f8f8;
+  --gray5: #e3e3e3;
   --red: #e11818;
   --padding-bottom: 3rem;
   --container-padding: 0 2rem;
@@ -158,4 +160,40 @@ img {
   @media (max-width: $md) {
     padding-bottom: 3rem;
   }
+}
+
+.pb15 {
+  padding-bottom: 15rem;
+
+  @media (max-width: $lg) {
+    padding-bottom: 4rem;
+  }
+}
+
+.pt8 {
+  padding-top: 8rem;
+}
+
+.btn {
+  background-color: var(--gray2);
+  border: 0.1rem solid transparent;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: transparent;
+    border: 0.1rem solid var(--gray2);
+    color: var(--green);
+  }
+
+  &:active {
+    border: 0.1rem solid var(--green);
+  }
+}
+
+.input {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
 }

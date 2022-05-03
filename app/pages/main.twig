@@ -1,6 +1,11 @@
 {% extends "../blocks/layout/base.twig" %}
 {% block content %}
 <main class="main">
+  {% include "../blocks/header/header.twig" with {
+    header: {
+      auth: false,
+    }
+  } %}
   <h1 class="visually-hidden">Brando - обувь, сумки, одежда</h1>
   {% include "../blocks/main/promo-slider/promo-slider.twig" with {
     promoSlider: {
@@ -103,4 +108,5 @@
     }
   } %}
 </main>
+{% include "../blocks/footer/footer.twig" %}
 {% endblock %}

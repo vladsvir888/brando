@@ -1,0 +1,135 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+    isContactsPage: true,
+  }
+} %}
+<main class="contacts pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Контакты',
+      }
+    } %}
+    <section class="section-contacts pb15">
+      <h1 class="section-title">Контакты</h1>
+      <div class="section-contacts__wrap">
+        <div class="section-contacts__start">
+          <div class="section-contacts__item section-contacts__phone">
+            <div class="section-contacts__icon-wrap">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#phone"></use>
+              </svg>
+            </div>
+            <div class="section-contacts__content">
+              <div class="section-contacts__content-title">Номер телефона</div>
+              <a href="tel:+73912191000" class="section-contacts__content-text">+7 (391) 219-1000</a>
+            </div>
+          </div>
+          <div class="section-contacts__item section-contacts__address">
+            <div class="section-contacts__icon-wrap">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#place"></use>
+              </svg>
+            </div>
+            <div class="section-contacts__content">
+              <div class="section-contacts__content-title">Адрес</div>
+              <div class="section-contacts__content-text">г. Красноярск, ул.Чернышевского, 81</div>
+            </div>
+          </div>
+          <div class="section-contacts__item section-contacts__email-block">
+            <div class="section-contacts__icon-wrap">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#email"></use>
+              </svg>
+            </div>
+            <div class="section-contacts__content">
+              <div class="section-contacts__content-title">Эл.почта</div>
+              <a href="mailto:info@brandogroup" class="section-contacts__content-text section-contacts__email">info@brandogroup</a>
+            </div>
+          </div>
+          <div class="section-contacts__item section-contacts__timetable">
+            <div class="section-contacts__icon-wrap">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#clock"></use>
+              </svg>
+            </div>
+            <div class="section-contacts__content">
+              <div class="section-contacts__content-title">Часы работы</div>
+              <div class="section-contacts__content-text">Пн-Вс: 10:00-20:00</div>
+            </div>
+          </div>
+          {% include "../blocks/socials/socials.twig" with {
+            social: {
+              color: "black",
+              background: "light-gray",
+            }
+          } %}
+          <button class="section-contacts__btn">Связаться с нами</button>
+        </div>
+        <div class="section-contacts__middle">
+          <div id="map" class="section-contacts__map"></div>
+        </div>
+        <div class="section-contacts__end">
+          <div class="section-contacts__item section-contacts__item--right section-contacts__phone">
+            <div class="section-contacts__content section-contacts__content--right">
+              <div class="section-contacts__content-title">Номер телефона</div>
+              <a href="tel:+73652773377" class="section-contacts__content-text">+7 (365) 277-33-77</a>
+            </div>
+            <div class="section-contacts__icon-wrap section-contacts__icon-wrap--right">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="section-contacts__item section-contacts__item--right section-contacts__address">
+            <div class="section-contacts__content section-contacts__content--right">
+              <div class="section-contacts__content-title">Адрес</div>
+              <div class="section-contacts__content-text">г. Симферополь, пр. Кирова, 7А</div>
+            </div>
+            <div class="section-contacts__icon-wrap section-contacts__icon-wrap--right">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#place"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="section-contacts__item section-contacts__item--right section-contacts__email-block">
+            <div class="section-contacts__content section-contacts__content--right">
+              <div class="section-contacts__content-title">Эл.почта</div>
+              <a href="mailto:info@brandogroup" class="section-contacts__content-text section-contacts__email">info@brandogroup</a>
+            </div>
+            <div class="section-contacts__icon-wrap section-contacts__icon-wrap--right">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#email"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="section-contacts__item section-contacts__item--right section-contacts__timetable">
+            <div class="section-contacts__content section-contacts__content--right">
+              <div class="section-contacts__content-title">Часы работы</div>
+              <div class="section-contacts__content-text">Пн-Вс: 10:00-20:00</div>
+            </div>
+            <div class="section-contacts__icon-wrap section-contacts__icon-wrap--right">
+              <svg class="section-contacts__icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#clock"></use>
+              </svg>
+            </div>
+          </div>
+          {% include "../blocks/socials/socials.twig" with {
+            social: {
+              color: "black",
+              background: "light-gray",
+            }
+          } %}
+          <button class="section-contacts__btn">Связаться с нами</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+{% endblock %}

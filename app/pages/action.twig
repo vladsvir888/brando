@@ -1,0 +1,87 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+    isActionPage: true,
+  }
+} %}
+<main class="actions pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Акции',
+      }
+    } %}
+    <section class="section-actions pb15">
+      <h1 class="section-title">Акции</h1>
+      <div class="section-actions__wrap">
+        {% include "../blocks/actions/card.twig" with {
+          action: {
+            cards: [
+              {
+                period: "15 октября - 22 октября",
+                title: "Акция! Скидки до 80% на женское и мужское белье Triumph, Diwari, Leilieve + бесплатная доставка от 799 грн!",
+                days: "7",
+                datetime: "P7D",
+                jpgImg: "./assets/images/action-cards/01.jpg",
+                webpImg: "./assets/images/action-cards/01.webp",
+              },
+              {
+                period: "18 ноября - 30 ноября",
+                title: "Акция! Скидка 29% на декоративное освещение Декора!",
+                days: "12",
+                datetime: "P12D",
+                jpgImg: "./assets/images/action-cards/02.jpg",
+                webpImg: "./assets/images/action-cards/02.webp",
+              },
+              {
+                period: "6 апреля - 11 апреля",
+                title: "Акция! К акционным музыкальным инструментам и музыкальным аксессуарам – сертификат на онлайн-обучение в музыкальной школе в подарок!",
+                days: "5",
+                datetime: "P5D",
+                jpgImg: "./assets/images/action-cards/03.jpg",
+                webpImg: "./assets/images/action-cards/03.webp",
+              },
+              {
+                period: "15 октября - 22 октября",
+                title: "Акция! Скидки до 80% на женское и мужское белье Triumph, Diwari, Leilieve + бесплатная доставка от 799 грн!",
+                days: "7",
+                datetime: "P7D",
+                jpgImg: "./assets/images/action-cards/01.jpg",
+                webpImg: "./assets/images/action-cards/01.webp",
+              },
+              {
+                period: "18 ноября - 30 ноября",
+                title: "Акция! Скидка 29% на декоративное освещение Декора!",
+                days: "12",
+                datetime: "P12D",
+                jpgImg: "./assets/images/action-cards/02.jpg",
+                webpImg: "./assets/images/action-cards/02.webp",
+              },
+              {
+                period: "6 апреля - 11 апреля",
+                title: "Акция! К акционным музыкальным инструментам и музыкальным аксессуарам – сертификат на онлайн-обучение в музыкальной школе в подарок!",
+                days: "5",
+                datetime: "P5D",
+                jpgImg: "./assets/images/action-cards/03.jpg",
+                webpImg: "./assets/images/action-cards/03.webp",
+              },
+              {
+                period: "15 октября - 22 октября",
+                title: "Акция! Скидки до 80% на женское и мужское белье Triumph, Diwari, Leilieve + бесплатная доставка от 799 грн!",
+                days: "7",
+                datetime: "P7D",
+                jpgImg: "./assets/images/action-cards/01.jpg",
+                webpImg: "./assets/images/action-cards/01.webp",
+              },
+            ]
+          }
+        } %}
+      </div>
+    </section>
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

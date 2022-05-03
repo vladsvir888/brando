@@ -1,0 +1,24 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+<main class="pt8">
+  <div class="container">
+    <div class="content-404">
+      <div class="content-404__num">404</div>
+      <div class="content-404__descr-block">
+        <div class="content-404__title">Такой страницы нет</div>
+        <div class="content-404__subtitle">Но есть много туфель, ботинок, сапог, сумок...</div>
+      </div>
+      <div class="content-404__btn-block">
+        <a class="content-404__link" href="#">На главную</a>
+        <a class="content-404__link" href="#">В каталог</a>
+      </div>
+    </div>
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

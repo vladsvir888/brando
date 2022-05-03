@@ -13,18 +13,42 @@
     <div class="header__center">
       <nav class="header__menu">
         <ul class="header__menu-list">
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Каталог</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">О нас</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Акции</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Контакты</a>
-          </li>
+          {% if header.isCatalogPage %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link is-active">Каталог</a>
+            </li>
+          {% else %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Каталог</a>
+            </li>
+          {% endif %}
+          {% if header.isAboutPage %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link is-active">О нас</a>
+            </li>
+          {% else %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">О нас</a>
+            </li>
+          {% endif %}
+          {% if header.isActionPage %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link is-active">Акции</a>
+            </li>
+          {% else %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Акции</a>
+            </li>
+          {% endif %}
+          {% if header.isContactsPage %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link is-active">Контакты</a>
+            </li>
+          {% else %}
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Контакты</a>
+            </li>
+          {% endif %}
         </ul>
       </nav>
     </div>

@@ -1,11 +1,6 @@
 .footer {
   background: var(--black);
   padding: 10rem 2rem 4rem;
-  margin-top: 15rem;
-
-  @media (max-width: $lg) {
-    margin-top: 4rem;
-  }
 
   > * {
     &:not(:last-child) {
@@ -226,6 +221,19 @@
 
     @extend %flex-between;
     flex-wrap: wrap;
+
+    a {
+      color: var(--white);
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--green);
+      }
+
+      &:active {
+        color: var(--active-green);
+      }
+    }
   }
 
   &__categories {
@@ -251,10 +259,19 @@
     @extend %text-16;
     font-weight: 400;
     color: var(--white);
+    transition: color 0.3s;
 
     @media (max-width: $sm) {
       font-size: 1.4rem;
       line-height: 2.4rem;
+    }
+
+    &:hover {
+      color: var(--green);
+    }
+
+    &:active {
+      color: var(--active-green);
     }
   }
 
@@ -262,10 +279,19 @@
     @extend %text-16;
     font-weight: 400;
     color: var(--white);
+    transition: color 0.3s;
 
     @media (max-width: $sm) {
       font-size: 1.4rem;
       line-height: 2.4rem;
+    }
+
+    &:hover {
+      color: var(--green);
+    }
+
+    &:active {
+      color: var(--active-green);
     }
   }
 
@@ -316,24 +342,19 @@
     margin-left: 1rem;
   }
 
-  &__acc-btn {
-    border: none;
-    background-color: transparent;
-
-    @media (min-width: 501px) {
-      display: none;
+  &__icon-wrap {
+    @media (max-width: $sm) {
+      background: url('../../assets/images/sprite-icons/plus.svg') no-repeat 50% / contain;
+      width: 1rem;
+      height: 1rem;
     }
-  }
-
-  &__plus-icon {
-    width: 1rem;
-    height: 1rem;
-    fill: var(--white);
-    pointer-events: none;
-    transition: transform 0.3s;
   }
 }
 
-.footer__categories-inner.is-active .footer__plus-icon {
-  transform: rotate(45deg);
+.footer__categories-inner.is-active .footer__icon-wrap {
+  @media (max-width: $sm) {
+    background: url('../../assets/images/sprite-icons/minus.svg') no-repeat 50% / contain;
+    width: 1rem;
+    height: 1rem;
+  }
 }

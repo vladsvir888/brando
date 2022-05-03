@@ -87,4 +87,16 @@
       height: 20rem;
     }
   }
+
+  &__arrow-icon {
+    transition: fill 0.3s;
+
+    &:hover {
+      fill: var(--green);
+    }
+
+    &:active {
+      fill: var(--active-green);
+    }
+  }
 }
