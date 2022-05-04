@@ -345,8 +345,8 @@
   &__icon-wrap {
     @media (max-width: $sm) {
       background: url('../../assets/images/sprite-icons/plus.svg') no-repeat 50% / contain;
-      width: 1rem;
-      height: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 }
@@ -354,7 +354,7 @@
 .footer__categories-inner.is-active .footer__icon-wrap {
   @media (max-width: $sm) {
     background: url('../../assets/images/sprite-icons/minus.svg') no-repeat 50% / contain;
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }

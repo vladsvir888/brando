@@ -254,16 +254,19 @@
           } %}
         </div>
       </div>
-      <button class="catalog-filter__btn catalog-filter__reset-btn js-reset-btn" type="button">
-        Сбросить
-      </button>
-      <button class="catalog-filter__btn catalog-filter__submit-btn" type="submit">
-        Применить
-      </button>
+      <div class="catalog-filter__btn-wrap">
+        <button class="catalog-filter__btn catalog-filter__reset-btn js-reset-btn" type="button">
+          Сбросить
+        </button>
+        <button class="catalog-filter__btn catalog-filter__submit-btn" type="submit">
+          Применить
+        </button>
+      </div>
     </div>
     <div class="catalog-filter__selected-filter js-selected-filter"></div>
   </div>
   <div class="catalog-filter__bottom js-sort-wrap">
+    <button class="catalog-filter__open-filter-btn" type="button">Фильтры</button>
     <div class="catalog-filter__sort-filter js-filter-select">
       <div class="catalog-filter__sort-text">
         <div class="catalog-filter__sort-span">Сортировать по:</div>
@@ -288,7 +291,7 @@
       </div>
     </div>
     <div class="catalog-filter__bottom-text">166 товаров</div>
-    <div class="catalog-filter__sort-filter js-filter-select">
+    <div class="catalog-filter__sort-filter catalog-filter__sort-filter--num js-filter-select">
       <div class="catalog-filter__sort-text">
         <div class="catalog-filter__sort-span">Показывать по:</div>
         <div class="catalog-filter__sort-param" data-type="12">12</div>

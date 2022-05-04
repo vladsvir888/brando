@@ -56,8 +56,6 @@
   .swiper-button-next,
   .swiper-button-prev {
     position: static;
-    width: 4rem;
-    height: 4rem;
   }
 
   .swiper-button-next::after,
@@ -90,6 +88,9 @@
 
   &__arrow-icon {
     transition: fill 0.3s;
+    fill: var(--black);
+    width: 4rem;
+    height: 4rem;
 
     &:hover {
       fill: var(--green);

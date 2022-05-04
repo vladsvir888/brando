@@ -16,8 +16,7 @@ app.catalogFilter = {
         if (selectDropdown.style.maxHeight) {
           selectDropdown.style.maxHeight = null;
         } else {
-          selectDropdown.style.maxHeight = `${selectDropdown.scrollHeight}px`;
-          // selectDropdown.style.maxHeight = '19rem';
+          selectDropdown.style.maxHeight = '19rem';
         }
       }
     }
@@ -102,12 +101,10 @@ app.catalogFilter = {
       if (hiddenFilter.style.maxHeight) {
         hiddenFilter.style.maxHeight = null;
         hiddenFilter.style.overflow = 'hidden';
-        hiddenFilter.style.opacity = 0;
         allFilterBtn.classList.remove('is-active');
       } else {
         hiddenFilter.style.maxHeight = `${hiddenFilter.scrollHeight}px`;
         hiddenFilter.style.overflow = 'visible';
-        hiddenFilter.style.opacity = 1;
         allFilterBtn.classList.add('is-active');
       }
     });
