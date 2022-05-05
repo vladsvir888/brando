@@ -1,5 +1,13 @@
 <form action="/" class="catalog-filter js-catalog-filter">
   <div class="catalog-filter__top js-grid-filter">
+    <div class="catalog-filter__header-filter js-close-filter-btn">
+      <button class="catalog-filter__header-btn" type="button">
+        <svg class="catalog-filter__header-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#arrow-filter"></use>
+        </svg>
+        Фильтры
+      </button>
+    </div>
     <div class="catalog-filter__grid-filter">
       <div class="catalog-filter__select js-filter-select">
         <div class="catalog-filter__select-text">
@@ -254,6 +262,14 @@
           } %}
         </div>
       </div>
+      <div class="catalog-filter__slider-snap">
+        <div class="catalog-filter__slider-title">Цена</div>
+        <div class="catalog-filter__slider-wrap">
+          <span class="catalog-filter__slider-value" id="slider-snap-value-lower">0</span>
+          <span class="catalog-filter__slider-value" id="slider-snap-value-upper">2500</span>
+        </div>
+        <div id="slider-snap"></div>
+      </div>
       <div class="catalog-filter__btn-wrap">
         <button class="catalog-filter__btn catalog-filter__reset-btn js-reset-btn" type="button">
           Сбросить
@@ -266,7 +282,7 @@
     <div class="catalog-filter__selected-filter js-selected-filter"></div>
   </div>
   <div class="catalog-filter__bottom js-sort-wrap">
-    <button class="catalog-filter__open-filter-btn" type="button">Фильтры</button>
+    <button class="catalog-filter__open-filter-btn js-open-filter-btn" type="button">Фильтры</button>
     <div class="catalog-filter__sort-filter js-filter-select">
       <div class="catalog-filter__sort-text">
         <div class="catalog-filter__sort-span">Сортировать по:</div>

@@ -107,12 +107,12 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "imask": "^6.4.2",
-    "jquery": "^3.6.0",
-    "jquery-validation": "^1.19.3",
+    "nouislider": "^15.6.0",
     "svg4everybody": "^2.1.9",
     "sweetalert2": "^11.4.9",
     "swiper": "^7.4.1",
     "vanilla-lazyload": "^17.5.0",
+    "wnumb": "^1.2.0",
     "wowjs": "^1.1.3"
   }
 }

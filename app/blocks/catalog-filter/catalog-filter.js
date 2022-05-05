@@ -114,6 +114,10 @@ app.catalogFilter = {
 
     if (!resetBtn) return;
 
+    const snapSlider = document.getElementById('slider-snap');
+
+    if (!snapSlider) return;
+
     resetBtn.addEventListener('click', () => {
       catalogFilterWrap.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
         checkbox.checked = false;
@@ -124,6 +128,8 @@ app.catalogFilter = {
       catalogFilterWrap.querySelectorAll('.catalog-filter__select-num').forEach((num) => num.remove());
 
       catalogFilterWrap.querySelectorAll('.js-filter-select').forEach((select) => select.classList.remove('is-active'));
+
+      catalogFilterWrap.querySelectorAll('.js-select-dropdown').forEach((dropdown) => dropdown.style.maxHeight = '');
 
       const sortFilter1 = catalogFilterWrap.querySelectorAll('.catalog-filter__sort-filter')[0];
       const sortParam1 = sortFilter1.querySelector('.catalog-filter__sort-param');
@@ -136,6 +142,23 @@ app.catalogFilter = {
 
       sortParam2.dataset.type = '12';
       sortParam2.textContent = '12';
+
+      snapSlider.noUiSlider.reset();
+    });
+
+    // open filter on touch devices
+    const openFilterBtn = document.querySelector('.js-open-filter-btn');
+
+    if (!openFilterBtn) return;
+
+    openFilterBtn.addEventListener('click', () => {
+      document.querySelector('.js-grid-filter').classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    document.querySelector('.js-close-filter-btn').addEventListener('click', () => {
+      document.querySelector('.js-grid-filter').classList.remove('is-active');
+      document.body.style.overflow = '';
     });
   },
 };

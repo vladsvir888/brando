@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   app.serviceSlider.init(); // blocks/partners
   app.brandsSlider.init(); // blocks/partners
   app.catalogFilter.init(); // blocks/catalog-filter
+  app.sliderSnap.init(); // blocks/catalog-filter
 
   const phones = document.querySelectorAll('.phone');
 
