@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "title": "PEPE JEANS",
+      "descr": "женские черные ботинки BOBBING CITY",
+      "price": "7 450 ₽",
+      "jpgImg": "assets/images/product-card/01.jpg",
+      "webpImg": "assets/images/product-card/01.webp"
+    },
+    {
+      "title": "Baldinni",
+      "descr": "женские красные лодочки",
+      "price": "10 150 ₽",
+      "jpgImg": "assets/images/product-card/02.jpg",
+      "webpImg": "assets/images/product-card/02.webp"
+    },
+    {
+      "title": "PEPE JEANS",
+      "descr": "женские черные ботинки BOBBING CITY",
+      "price": "3 850 ₽",
+      "jpgImg": "assets/images/product-card/03.jpg",
+      "webpImg": "assets/images/product-card/03.webp"
+    },
+    {
+      "title": "SCHUTZ",
+      "descr": "женские зеленые кожаные лодочки",
+      "price": "5 350 ₽",
+      "jpgImg": "assets/images/product-card/04.jpg",
+      "webpImg": "assets/images/product-card/04.webp"
+    }
+  ]
+}

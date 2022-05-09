@@ -1,0 +1,12 @@
+.viewed-products-slider {
+  &__btn {
+    &::after,
+    &::before {
+      content: none;
+    }
+
+    width: 4rem;
+    height: 4rem;
+    top: 40%;
+  }
+}

@@ -1,0 +1,403 @@
+.contacts-form {
+  display: grid;
+  grid-template-columns: 1fr 38rem;
+  gap: 4rem;
+  align-items: start;
+
+  @media (max-width: $lg) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    padding: 2rem 0 4rem;
+    border-bottom: 0.1rem solid var(--gray5);
+
+    &:first-child {
+      border-top: 0.1rem solid var(--gray5);
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  // первый айтем
+  &__grid-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem 1rem;
+
+    @media (max-width: $lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // 3 последующие
+  &__receiving-item,
+  &__payment-item,
+  &__commentary-item {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__title-block {
+    @extend %flex-center-y;
+    flex-wrap: wrap;
+    margin-bottom: -1rem;
+
+    grid-column: span 6;
+
+    @media (max-width: $lg) {
+      grid-column: span 2;
+    }
+
+    @media (max-width: $sm) {
+      grid-column: unset;
+    }
+
+    > * {
+      margin-bottom: 1rem;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__title-num {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--gray4);
+
+    @extend %flex-center-xy;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__label {
+    @extend %flex-column;
+
+    grid-column: span 2;
+
+    &.error {
+      .contacts-form__input-text {
+        color: var(--red);
+      }
+
+      .contacts-form__input {
+        border: 0.1rem solid var(--red);
+      }
+
+      .contacts-form__error-message {
+        display: block;
+      }
+    }
+
+    @media (max-width: $lg) {
+      grid-column: unset;
+    }
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__error-message {
+    color: var(--red);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    position: absolute;
+    bottom: -2.5rem;
+    left: 0;
+    display: none;
+  }
+
+  // для обязательных полей
+  &__required-label {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 3.5rem;
+      right: 0.5rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      background: url('../../assets/images/sprite-icons/star.svg');
+      background-repeat: no-repeat;
+      content: '';
+    }
+  }
+
+  &__delivery-label {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 5rem;
+      right: 2rem;
+      width: 2rem;
+      height: 2rem;
+      background: url('../../assets/images/sprite-icons/calendar.svg');
+      background-repeat: no-repeat;
+      content: '';
+    }
+  }
+
+  &__house-label,
+  &__apartment-label {
+    grid-column: span 1;
+
+    @media (max-width: $lg) {
+      grid-column: unset;
+    }
+  }
+
+  &__input-text {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--gray3);
+  }
+
+  &__input {
+    border: 0.1rem solid var(--gray5);
+    padding: 1.8rem 2rem;
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    color: var(--black);
+    height: 100%;
+    transition: border 0.3s;
+  }
+
+  // сайдбар
+  &__end {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__edit-btn {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    border: 0.1rem solid var(--gray5);
+    background-color: transparent;
+    padding: 2.3rem;
+    width: 100%;
+    transition: border 0.3s;
+
+    &:hover {
+      border: 0.1rem solid var(--green);
+    }
+  }
+
+  // селект
+  &__select {
+    @extend %flex-between;
+
+    position: relative;
+
+    cursor: pointer;
+
+    span {
+      pointer-events: none;
+    }
+
+    &.is-active {
+      border: 0.1rem solid var(--green);
+
+      .contacts-form__icon {
+        fill: var(--green);
+        transform: rotate(180deg);
+      }
+
+      .contacts-form__dropdown {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    flex-shrink: 0;
+    fill: var(--gray3);
+    margin-left: 0.5rem;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+
+  &__dropdown {
+    border: 0.1rem solid var(--gray5);
+    width: 35rem;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    z-index: 100;
+    background-color: var(--white);
+    padding: 2rem 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+
+    @media (max-width: $sm) {
+      width: 100%;
+    }
+  }
+
+  &__dropdown-times {
+    @media (max-width: $md) {
+      right: 0;
+      left: unset;
+    }
+  }
+
+  &__option-wrap {
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--gray4);
+
+      .contacts-form__option {
+        color: var(--green);
+      }
+    }
+  }
+
+  &__option {
+    @extend %text-16;
+    padding: 0 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  &__textarea {
+    height: 20rem;
+  }
+
+  // скрытый контент
+  &__hidden-content {
+    padding-left: 3.5rem;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: all 0.3s;
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (max-width: $md) {
+      padding-left: 0;
+    }
+  }
+
+  &__hidden-text {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--gray3);
+  }
+
+  &__hidden-wrap {
+    display: flex;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+
+        @media (max-width: $sm) {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__calendar-input {
+    @extend %flex-between;
+
+    width: 30rem;
+
+    padding-right: 5rem;
+
+    @media (max-width: $lg) {
+      width: 21.5rem;
+    }
+
+    @media (max-width: $sm) {
+      width: 100%;
+    }
+  }
+
+  &__calendar-icon {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    // margin-left: 0.5rem;
+    fill: var(--black);
+  }
+
+  &__delivery-input {
+    width: 30rem;
+
+    @media (max-width: $lg) {
+      width: 21.5rem;
+    }
+
+    @media (max-width: $sm) {
+      width: 100%;
+    }
+  }
+}
+
+.radio-style {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 0.1rem solid var(--gray5);
+
+  @extend %flex-center-xy;
+
+  span {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--green);
+    display: none;
+    border-radius: 50%;
+  }
+}
+
+.radio-style-text {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.radio:checked + .radio-style span {
+  display: block;
+}

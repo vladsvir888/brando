@@ -1,5 +1,27 @@
 app.catalogFilter = {
   init() {
+    // sort
+    const sortWrap = document.querySelector('.js-sort-wrap');
+
+    if (!sortWrap) return;
+
+    sortWrap.addEventListener('click', (e) => {
+      const { target } = e;
+
+      if (!target.dataset.type) return;
+
+      const attr = target.dataset.type;
+
+      const closestWrap = target.closest('.js-filter-select');
+
+      const sortParam = closestWrap.querySelector('.js-sort-param');
+
+      sortParam.setAttribute('data-type', attr);
+      sortParam.textContent = attr;
+
+      closestWrap.classList.remove('is-active');
+    });
+
     const catalogFilterWrap = document.querySelector('.js-catalog-filter');
 
     if (!catalogFilterWrap) return;
@@ -71,24 +93,24 @@ app.catalogFilter = {
     });
 
     // sort
-    const sortWrap = document.querySelector('.js-sort-wrap');
+    // const sortWrap = document.querySelector('.js-sort-wrap');
 
-    sortWrap.addEventListener('click', (e) => {
-      const { target } = e;
+    // sortWrap.addEventListener('click', (e) => {
+    //   const { target } = e;
 
-      if (!target.dataset.type) return;
+    //   if (!target.dataset.type) return;
 
-      const attr = target.dataset.type;
+    //   const attr = target.dataset.type;
 
-      const closestWrap = target.closest('.js-filter-select');
+    //   const closestWrap = target.closest('.js-filter-select');
 
-      const sortParam = closestWrap.querySelector('.catalog-filter__sort-param');
+    //   const sortParam = closestWrap.querySelector('.js-sort-param');
 
-      sortParam.setAttribute('data-type', attr);
-      sortParam.textContent = attr;
+    //   sortParam.setAttribute('data-type', attr);
+    //   sortParam.textContent = attr;
 
-      closestWrap.classList.remove('is-active');
-    });
+    //   closestWrap.classList.remove('is-active');
+    // });
 
     // show more filters
     const allFilterBtn = catalogFilterWrap.querySelector('.js-all-filter-btn');

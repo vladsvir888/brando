@@ -1,0 +1,52 @@
+.timer {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    @extend %flex-column-center-xy;
+
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+      padding-right: 2rem;
+
+      @media (max-width: $sm) {
+        padding-right: 1.5rem;
+      }
+
+      &::after {
+        @extend %text-28;
+        color: var(--gray3);
+
+        position: absolute;
+        top: 1rem;
+        right: 0;
+        content: ':';
+
+        @media (max-width: $sm) {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  &__num {
+    @extend %text-28;
+    color: var(--green);
+    background-color: var(--gray4);
+    padding: 1rem 1.5rem;
+
+    @media (max-width: $sm) {
+      font-size: 2rem;
+    }
+  }
+
+  &__text {
+    @extend %text-16;
+
+    @media (max-width: $sm) {
+      font-size: 1.4rem;
+    }
+  }
+}

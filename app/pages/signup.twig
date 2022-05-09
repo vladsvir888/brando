@@ -2,23 +2,6 @@
 {% include "../blocks/popups/popups.twig" with {
   popup: {
     sign: true,
-    id: "signin-popup",
-    title: "Войти",
-    noAcc: true,
-    btnText: "Войти",
-    forgetPassw: true,
-    placeholderPhone: "Ваш телефон",
-    placeholderPassw: "Пароль",
-    repeatPassw: false,
-    isSubtitle: false,
-    isEmail: false,
-    isPhone: true,
-    isPassw: true,
-  }
-} %}
-{% include "../blocks/popups/popups.twig" with {
-  popup: {
-    sign: true,
     id: "signup-popup",
     active: "is-active",
     title: "Зарегистрироваться",
@@ -32,23 +15,6 @@
     isEmail: false,
     isPhone: true,
     isPassw: true,
-  }
-} %}
-{% include "../blocks/popups/popups.twig" with {
-  popup: {
-    sign: true,
-    id: "passw-recovery-popup",
-    title: "Восстановление пароля",
-    noAcc: false,
-    btnText: "Отправить",
-    forgetPassw: false,
-    placeholderPhone: "Ваш телефон",
-    isSubtitle: true,
-    isEmail: true,
-    isPhone: false,
-    isPassw: false,
-    placeholderPassw: "Пароль",
-    repeatPassw: false,
   }
 } %}
 {% include "../blocks/header/header.twig" with {

@@ -1,0 +1,27 @@
+.counter {
+  border: 0.1rem solid var(--gray5);
+
+  @extend %flex-between;
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    padding: 1.7rem 2rem;
+  }
+
+  &__value {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+  }
+
+  &__minus-icon {
+    fill: var(--gray5);
+  }
+}

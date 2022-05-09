@@ -58,6 +58,7 @@
   &__header-btn {
     background-color: transparent;
     border: none;
+
     @extend %text-16;
     font-weight: 700;
     text-transform: uppercase;
@@ -259,7 +260,7 @@
   }
 
   &__btn-wrap {
-    margin-bottom: -1rem;
+    // margin-bottom: -1rem;
 
     > * {
       margin-bottom: 1rem;
@@ -480,7 +481,8 @@
     right: -5px;
   }
 
-  .noUi-handle:after, .noUi-handle:before {
+  .noUi-handle::after,
+  .noUi-handle::before {
     content: none;
   }
 
@@ -591,6 +593,7 @@
   width: 4rem;
   height: 4rem;
   border: 0.1rem solid var(--gray5);
+  color: var(--black);
 }
 
 .checkbox-size:checked + .checkbox-size-style {

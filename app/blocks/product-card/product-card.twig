@@ -1,0 +1,109 @@
+{% for card in card.items %}
+<div class="swiper-slide">
+  <div class="product-card">
+    <div class="product-card__img-wrap">
+      <picture>
+        <source type="image/webp" srcset="{{ card.webpImg }}">
+        <img class="product-card__img product-card__img--mobile" src="{{ card.jpgImg }}" alt="img">
+      </picture>
+      <div class="swiper js-product-slider product-card__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="{{ card.webpImg }}">
+              <img class="product-card__img" src="{{ card.jpgImg }}" alt="img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="{{ card.webpImg }}">
+              <img class="product-card__img" src="{{ card.jpgImg }}" alt="img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="{{ card.webpImg }}">
+              <img class="product-card__img" src="{{ card.jpgImg }}" alt="img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="{{ card.webpImg }}">
+              <img class="product-card__img" src="{{ card.jpgImg }}" alt="img">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="{{ card.webpImg }}">
+              <img class="product-card__img" src="{{ card.jpgImg }}" alt="img">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-button-prev product-card__slider-btn">
+          <svg class="product-card__arrow-icon" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#arrow-prev"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next product-card__slider-btn">
+          <svg class="product-card__arrow-icon" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#arrow-next"></use>
+          </svg>
+        </div>
+        <div class="swiper-pagination product-card__slider-pagination"></div>
+      </div>
+    </div>
+    <a href="#" class="product-card__content">
+      <div class="product-card__content-top">
+        <div class="product-card__title">{{ card.title }}</div>
+        <div class="product-card__current-price product-card__current-price--{{ card.currentPriceColor }}">{{ card.currentPrice }}</div>
+      </div>
+      <div class="product-card__content-bottom">
+        <div class="product-card__descr">{{ card.descr }}</div>
+        <div class="product-card__current-price product-card__current-price--mobile product-card__current-price--{{ card.currentPriceColor }}">{{ card.currentPrice }}</div>
+        {% if card.oldPrice is defined %}
+          <span class="product-card__old-price">{{ card.oldPrice }}</span>
+        {% endif %}
+      </div>
+    </a>
+
+    {% if card.label is defined %}
+      <span class="product-card__label product-card__label--{{ card.labelColor }}">{{ card.label }}</span>
+    {% endif %}
+
+    <button class="product-card__like-btn js-like-btn">
+      <svg class="product-card__like-icon" viewBox="0 0 100 100">
+        <use xlink:href="./assets/images/sprite.svg#heart"></use>
+      </svg>
+    </button>
+
+    <div class="product-card__checkboxes">
+      {% include "../../blocks/catalog-filter/checkboxes/checkbox-size.twig" with {
+        checkboxes: {
+          items: [
+            {
+              size: "35",
+            },
+            {
+              size: "36",
+              disabled: true,
+            },
+            {
+              size: "37",
+              disabled: true,
+            },
+            {
+              size: "38",
+            },
+            {
+              size: "39",
+            },
+            {
+              size: "40",
+            },
+          ]
+        }
+      } %}
+    </div>
+  </div>
+</div>
+{% endfor %}

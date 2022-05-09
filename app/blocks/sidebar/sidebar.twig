@@ -1,0 +1,31 @@
+<div class="sidebar">
+  {% if title is defined %}
+  <div class="sidebar__title">Итого</div>
+  {% endif %}
+  {% if numProducts is defined %}
+  <div class="sidebar__num-products">
+    <div class="sidebar__num-products-title">2 товара на сумму</div>
+    <div class="sidebar__num-products-value">21 000 ₽</div>
+  </div>
+  {% endif %}
+  <div class="sidebar__saving">
+    <div class="sidebar__saving-title">Вы экономите</div>
+    <div class="sidebar__saving-value">{{ saving }}</div>
+  </div>
+  {% if delivery is defined %}
+  <div class="sidebar__delivery">
+    <div class="sidebar__delivery-title">Стоимость доставки</div>
+    <div class="sidebar__delivery-value">450 ₽</div>
+  </div>
+  {% endif %}
+  <div class="sidebar__total">
+    <div class="sidebar__total-title">{{ total.text }}</div>
+    <div class="sidebar__total-value">{{ total.sum }}</div>
+  </div>
+  <button class="sidebar__order-btn js-order-btn" type="submit">{{ btnText }}</button>
+  {% if policy is defined %}
+  <p class="sidebar__policy">
+    Я согласен с условиями <a href="#">Публичной оферты и обработки персональных данных</a>
+  </p>
+  {% endif %}
+</div>

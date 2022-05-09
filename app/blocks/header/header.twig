@@ -77,7 +77,7 @@
           } %}
         </div>
       {% else %}
-        <button class="header__entry-btn header__btn" data-popup="#signin-popup">
+        <button class="header__entry-btn header__btn js-signin-btn">
           <svg class="header__icon" viewBox="0 0 100 100">
             <use xlink:href="./assets/images/sprite.svg#user"></use>
           </svg>
@@ -88,9 +88,7 @@
         <svg class="header__icon header__favourite-icon" viewBox="0 0 100 100">
           <use xlink:href="./assets/images/sprite.svg#heart"></use>
         </svg>
-        <div class="header__favourite-num header__nums">
-          <span>12</span>
-        </div>
+        {# <div class="header__nums js-favourite-nums"></div> #}
       </a>
       <a href="#" class="header__basket">
         <svg class="header__icon" viewBox="0 0 100 100">

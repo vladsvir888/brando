@@ -1,0 +1,122 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+<main class="favourites pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Личный кабинет',
+        item3: 'Избранное'
+      }
+    } %}
+    <section class="favourites-section pb15">
+      <h1 class="section-title">Избранное</h1>
+      {% include "../blocks/product-item/product-item.twig" with {
+        productItem: {
+          items: [
+            {
+              jpgImg: './assets/images/product-item/01.jpg',
+              webpImg: './assets/images/product-item/01.webp',
+              info: {
+                title: 'SCHUTZ',
+                descr: 'женские зеленые кожаные лодочки',
+                article: '2457448',
+                size: '38',
+                color: 'темно-зеленый'
+              },
+              price: '4 550 ₽',
+              discountPrice: '2 350 ₽',
+              discount: '- 2 550 ₽',
+              basketBtn: true,
+            },
+            {
+              jpgImg: './assets/images/product-item/02.jpg',
+              webpImg: './assets/images/product-item/02.webp',
+              info: {
+                title: 'SCHUTZ',
+                descr: 'женские зеленые кожаные сапоги',
+                article: '4433218',
+                size: '38',
+                color: 'темно-зеленый'
+              },
+              price: '7 000 ₽',
+              discountPrice: '5 599 ₽',
+              discount: '- 2 550 ₽',
+              basketBtn: true,
+            },
+            {
+              jpgImg: './assets/images/product-item/01.jpg',
+              webpImg: './assets/images/product-item/01.webp',
+              info: {
+                title: 'SCHUTZ',
+                descr: 'женские зеленые кожаные лодочки',
+                article: '2457448',
+                size: '38',
+                color: 'темно-зеленый'
+              },
+              price: '4 550 ₽',
+              discountPrice: '2 350 ₽',
+              discount: '- 2 550 ₽',
+              basketBtn: true,
+            },
+            {
+              jpgImg: './assets/images/product-item/02.jpg',
+              webpImg: './assets/images/product-item/02.webp',
+              info: {
+                title: 'SCHUTZ',
+                descr: 'женские зеленые кожаные сапоги',
+                article: '4433218',
+                size: '38',
+                color: 'темно-зеленый'
+              },
+              price: '7 000 ₽',
+              discountPrice: '5 599 ₽',
+              discount: '- 2 550 ₽',
+              basketBtn: true,
+            },
+            {
+              jpgImg: './assets/images/product-item/01.jpg',
+              webpImg: './assets/images/product-item/01.webp',
+              info: {
+                title: 'SCHUTZ',
+                descr: 'женские зеленые кожаные лодочки',
+                article: '2457448',
+                size: '38',
+                color: 'темно-зеленый'
+              },
+              price: '4 550 ₽',
+              discountPrice: '2 350 ₽',
+              discount: '- 2 550 ₽',
+              basketBtn: true,
+            },
+            {
+              jpgImg: './assets/images/product-item/02.jpg',
+              webpImg: './assets/images/product-item/02.webp',
+              info: {
+                title: 'SCHUTZ',
+                descr: 'женские зеленые кожаные сапоги',
+                article: '4433218',
+                size: '38',
+                color: 'темно-зеленый'
+              },
+              price: '7 000 ₽',
+              discountPrice: '5 599 ₽',
+              discount: '- 2 550 ₽',
+              basketBtn: true,
+            },
+          ]
+        }
+      } %}
+      <div class="favourites-section__pagination-block">
+        {% include "../blocks/pagination/pagination.twig" %}
+      </div>
+    </section>
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

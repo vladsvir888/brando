@@ -1,0 +1,59 @@
+{% for item in productItem.items %}
+{% set info = item.info %}
+<div class="product-item">
+  <div class="product-item__start">
+    <picture>
+      <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ item.webpImg }}">
+      <img class="lazy product-item__img" src="./assets/images/pixel.png" data-src="{{ item.jpgImg }}" alt="img">
+    </picture>
+    <div class="product-item__content">
+      <div class="product-item__content-top">
+        <div class="product-item__title">{{ info.title }}</div>
+        <div class="product-item__descr">{{ info.descr }}</div>
+      </div>
+      <div class="product-item__content-bottom">
+        <div class="product-item__content-item">
+          <div class="product-item__name">Артикул:</div>
+          <div class="product-item__value">{{ info.article }}</div>
+        </div>
+        <div class="product-item__content-item">
+          <div class="product-item__name">Размер:</div>
+          <div class="product-item__value">{{ info.size }}</div>
+        </div>
+        <div class="product-item__content-item">
+          <div class="product-item__name">Цвет:</div>
+          <div class="product-item__value">{{ info.color }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-item__end">
+    <div class="product-item__counter">
+      <div class="product-item__counter-name">Количество</div>
+      {% include "../counter/counter.twig" %}
+    </div>
+    <div class="product-item__price">
+      <div class="product-item__price-name">Стоимость</div>
+      <div class="product-item__price-value">{{ item.price }}</div>
+    </div>
+    {% if item.discount is defined %}
+    <div class="product-item__discount">
+      <div class="product-item__discount-name">Скидка</div>
+      <div class="product-item__discount-value">{{ item.discount }}</div>
+    </div>
+    {% endif %}
+    <div class="product-item__price">
+      <div class="product-item__price-name">Стоимость со скидкой</div>
+      <div class="product-item__price-value product-item__discount-price-value">{{ item.discountPrice }}</div>
+    </div>
+  </div>
+  {% if item.basketBtn is defined %}
+  <a href="#" class="product-item__basket-btn">В корзину</a>
+  {% endif %}
+  <button class="product-item__close-btn">
+    <svg class="product-item__close-icon" viewBox="0 0 100 100">
+      <use xlink:href="./assets/images/sprite.svg#popup-close"></use>
+    </svg>
+  </button>
+</div>
+{% endfor %}

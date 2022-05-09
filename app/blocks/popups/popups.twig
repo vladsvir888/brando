@@ -20,9 +20,9 @@
     <button class="cabinet-popup__exit-btn btn">Выйти</button>
   </div>
 {% elseif popup.sign %}
-  <div id="{{ popup.id }}" class="popup js-popup {{ popup.active }}">
+  <div id="{{ popup.id }}" class="popup {{ popup.active }}">
     <div class="popup__wrap">
-      <button class="popup__btn-close js-popup-close">
+      <button class="popup__btn-close" onclick="Swal.close(); return false;">
         <svg class="popup__close-icon" viewBox="0 0 100 100">
           <use xlink:href="./assets/images/sprite.svg#popup-close"></use>
         </svg>
@@ -72,7 +72,7 @@
         {% endif %}
 
         {% if popup.forgetPassw %}
-          <a class="popup__forget-link" href="/" data-popup="#passw-recovery-popup">Забыли пароль?</a>
+          <a class="popup__forget-link js-forget-btn" href="#">Забыли пароль?</a>
         {% endif %}
 
         <button class="popup__btn" type="submit">{{ popup.btnText }}</button>
@@ -81,7 +81,7 @@
       {% if popup.noAcc %}
         <div class="popup__noacc-block">
           <div class="popup__noacc-title">Еще нет аккаунта?</div>
-          <a class="popup__noacc-link btn" href="/" data-popup="#signup-popup">Зарегистрироваться</a>
+          <a class="popup__noacc-link btn js-noacc-btn" href="#">Зарегистрироваться</a>
         </div>
       {% endif %}
     </div>

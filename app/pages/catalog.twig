@@ -15,10 +15,136 @@
         item3: 'Обувь'
       }
     } %}
-    <section class="catalog-section">
+    <section class="catalog-section pb15">
       <h1 class="section-title">Обувь</h1>
       {% include "../blocks/catalog-filter/catalog-filter.twig" %}
+      <div class="catalog-section__grid">
+        {% include "../blocks/product-card/product-card.twig" with {
+          card: {
+            items: [
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "green",
+                label: "new",
+                labelColor: "green",
+                jpgImg: "./assets/images/product-card/01.jpg",
+                webpImg: "./assets/images/product-card/01.webp",
+              },
+              {
+                title: "Baldinni",
+                descr: "женские красные лодочки",
+                currentPrice: "10 550 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/02.jpg",
+                webpImg: "./assets/images/product-card/02.webp",
+              },
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "red",
+                oldPrice: "3 200 ₽",
+                label: "sale",
+                labelColor: "red",
+                jpgImg: "./assets/images/product-card/03.jpg",
+                webpImg: "./assets/images/product-card/03.webp",
+              },
+              {
+                title: "SCHUTZ",
+                descr: "женские зеленые кожаные лодочки",
+                currentPrice: "8 350 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/04.jpg",
+                webpImg: "./assets/images/product-card/04.webp",
+              },
+
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "green",
+                label: "new",
+                labelColor: "green",
+                jpgImg: "./assets/images/product-card/01.jpg",
+                webpImg: "./assets/images/product-card/01.webp",
+              },
+              {
+                title: "Baldinni",
+                descr: "женские красные лодочки",
+                currentPrice: "10 550 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/02.jpg",
+                webpImg: "./assets/images/product-card/02.webp",
+              },
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "red",
+                oldPrice: "3 200 ₽",
+                label: "sale",
+                labelColor: "red",
+                jpgImg: "./assets/images/product-card/03.jpg",
+                webpImg: "./assets/images/product-card/03.webp",
+              },
+              {
+                title: "SCHUTZ",
+                descr: "женские зеленые кожаные лодочки",
+                currentPrice: "8 350 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/04.jpg",
+                webpImg: "./assets/images/product-card/04.webp",
+              },
+
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "green",
+                label: "new",
+                labelColor: "green",
+                jpgImg: "./assets/images/product-card/01.jpg",
+                webpImg: "./assets/images/product-card/01.webp",
+              },
+              {
+                title: "Baldinni",
+                descr: "женские красные лодочки",
+                currentPrice: "10 550 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/02.jpg",
+                webpImg: "./assets/images/product-card/02.webp",
+              },
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "red",
+                oldPrice: "3 200 ₽",
+                label: "sale",
+                labelColor: "red",
+                jpgImg: "./assets/images/product-card/03.jpg",
+                webpImg: "./assets/images/product-card/03.webp",
+              },
+              {
+                title: "SCHUTZ",
+                descr: "женские зеленые кожаные лодочки",
+                currentPrice: "8 350 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/04.jpg",
+                webpImg: "./assets/images/product-card/04.webp",
+              },
+            ]
+          }
+        } %}
+      </div>
+      <div class="catalog-section__bottom-block">
+        {% include "../blocks/show-more/show-more.twig" %}
+        {% include "../blocks/pagination/pagination.twig" %}
+      </div>
     </section>
+    {% include "../blocks/viewed-products/viewed-products.twig" %}
   </div>
 </main>
 {% include "../blocks/footer/footer.twig" %}

@@ -1,0 +1,180 @@
+<form action="/" class="contacts-form js-sort-wrap js-contacts-form" autocomplete="off">
+  <div class="contacts-form__start">
+    <div class="contacts-form__item contacts-form__grid-item">
+      <div class="contacts-form__title-block">
+        <span class="contacts-form__title-num">1</span>
+        <div class="contacts-form__title">Контактные данные</div>
+      </div>
+      <label class="contacts-form__label contacts-form__required-label">
+        <small class="contacts-form__error-message">Обязательное поле!</small>
+        <span class="contacts-form__input-text">Фамилия</span>
+        <input class="contacts-form__input surname" type="text" name="surname">
+      </label>
+      <label class="contacts-form__label contacts-form__required-label">
+        <small class="contacts-form__error-message">Обязательное поле!</small>
+        <span class="contacts-form__input-text">Имя</span>
+        <input class="contacts-form__input name" type="text" name="name">
+      </label>
+      <label class="contacts-form__label">
+        <span class="contacts-form__input-text">Отчество</span>
+        <input class="contacts-form__input" type="text" name="middle_name">
+      </label>
+      <label class="contacts-form__label">
+        <span class="contacts-form__input-text">Эл.почта</span>
+        <input class="contacts-form__input" type="text" name="email">
+      </label>
+      <label class="contacts-form__label contacts-form__required-label">
+        <small class="contacts-form__error-message">Обязательное поле!</small>
+        <span class="contacts-form__input-text">Телефон</span>
+        <input class="contacts-form__input contacts-form__phone-input phone" type="text" name="phone">
+      </label>
+      <label class="contacts-form__label">
+        <span class="contacts-form__input-text">Индекс</span>
+        <input class="contacts-form__input" type="text" name="index">
+      </label>
+      <div class="contacts-form__label">
+        <span class="contacts-form__input-text">Город</span>
+        <div class="contacts-form__input contacts-form__select js-filter-select">
+          <span class="js-sort-param" data-type="Не выбрано">Не выбрано</span>
+          <svg class="contacts-form__icon" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+          </svg>
+          <div class="contacts-form__dropdown">
+            <div class="contacts-form__option-wrap">
+              <div class="contacts-form__option" data-type="Москва">Москва</div>
+            </div>
+            <div class="contacts-form__option-wrap">
+              <div class="contacts-form__option" data-type="Санкт-Петербург">Санкт-Петербург</div>
+            </div>
+            <div class="contacts-form__option-wrap">
+              <div class="contacts-form__option" data-type="Новосибирск">Новосибирск</div>
+            </div>
+            <div class="contacts-form__option-wrap">
+              <div class="contacts-form__option" data-type="Екатеринбург">Екатеринбург</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <label class="contacts-form__label">
+        <span class="contacts-form__input-text">Улица</span>
+        <input class="contacts-form__input" type="text" name="street">
+      </label>
+      <label class="contacts-form__label contacts-form__house-label">
+        <span class="contacts-form__input-text">Дом</span>
+        <input class="contacts-form__input" type="text" name="house">
+      </label>
+      <label class="contacts-form__label contacts-form__apartment-label">
+        <span class="contacts-form__input-text">Квартира</span>
+        <input class="contacts-form__input" type="text" name="apartment">
+      </label>
+    </div>
+    <div class="contacts-form__item contacts-form__receiving-item">
+      <div class="contacts-form__title-block">
+        <span class="contacts-form__title-num">2</span>
+        <div class="contacts-form__title">Способ получения заказа</div>
+      </div>
+      <div class="contacts-form__wrap">
+        {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+          radio: {
+            text: 'Доставка курьером',
+            name: 'way_get',
+            class: 'js-hidden-content'
+          }
+        } %}
+        <div class="contacts-form__hidden-content">
+          <div class="contacts-form__hidden-text">Бесплатная доставка и примерка</div>
+          <div class="contacts-form__hidden-wrap">
+            {% include "../datepicker/datepicker.twig" %}
+            <div class="contacts-form__label">
+              <span class="contacts-form__input-text">Удобное время доставки</span>
+              <div class="contacts-form__input contacts-form__delivery-input contacts-form__select js-filter-select">
+                <span class="js-sort-param" data-type="Не выбрано">Не выбрано</span>
+                <svg class="contacts-form__icon" viewBox="0 0 100 100">
+                  <use xlink:href="./assets/images/sprite.svg#select-arrow"></use>
+                </svg>
+                <div class="contacts-form__dropdown contacts-form__dropdown-times">
+                  <div class="contacts-form__option-wrap">
+                    <div class="contacts-form__option" data-type="Утром">Утром</div>
+                  </div>
+                  <div class="contacts-form__option-wrap">
+                    <div class="contacts-form__option" data-type="Днём">Днём</div>
+                  </div>
+                  <div class="contacts-form__option-wrap">
+                    <div class="contacts-form__option" data-type="Вечером">Вечером</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+        radio: {
+          text: 'Самовывоз',
+          name: 'way_get',
+        }
+      } %}
+      {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+        radio: {
+          text: 'Почтой России / Транспортной компанией',
+          name: 'way_get',
+        }
+      } %}
+    </div>
+    <div class="contacts-form__item contacts-form__payment-item">
+      <div class="contacts-form__title-block">
+        <span class="contacts-form__title-num">3</span>
+        <div class="contacts-form__title">Способ оплаты</div>
+      </div>
+      {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+        radio: {
+          text: 'Безналичная оплата курьеру',
+          name: 'way_payment',
+        }
+      } %}
+      {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+        radio: {
+          text: 'Оплата в кассе магазина',
+          name: 'way_payment',
+        }
+      } %}
+      {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+        radio: {
+          text: 'Оплата на сайте',
+          name: 'way_payment',
+        }
+      } %}
+      {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+        radio: {
+          text: 'Оплата подарочной картой',
+          name: 'way_payment',
+        }
+      } %}
+    </div>
+    <div class="contacts-form__item contacts-form__commentary-item">
+      <div class="contacts-form__title-block">
+        <span class="contacts-form__title-num">4</span>
+        <div class="contacts-form__title">Комментарий</div>
+      </div>
+      <label class="contacts-form__label">
+        <span class="contacts-form__input-text">Комментарий</span>
+        <textarea class="contacts-form__input contacts-form__textarea" name="textarea"></textarea>
+      </label>
+    </div>
+  </div>
+  <div class="contacts-form__end">
+    {% include "../sidebar/sidebar.twig" with {
+      title: true,
+      saving: '-550 ₽',
+      total: {
+        text: 'К оплате',
+        sum: '21 450 ₽',
+      },
+      btnText: 'Заказ подтверждаю',
+      delivery: true,
+      numProducts: true,
+      policy: true,
+    } %}
+    <button class="contacts-form__edit-btn" type="button">Редактировать заказ</button>
+  </div>
+</form>

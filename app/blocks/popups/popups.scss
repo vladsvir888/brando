@@ -71,17 +71,29 @@
   pointer-events: none;
   transition: all 0.3s;
 
+  &.is-active {
+    opacity: 1;
+    pointer-events: auto;
+
+    .popup__wrap {
+      width: 50rem;
+
+      @media (max-width: $md) {
+        width: 35rem;
+      }
+    }
+  }
+
   &__wrap {
     position: absolute;
     background-color: var(--black);
-    width: 50rem;
     padding: 6rem;
+    width: 100%;
 
     @extend %pos-center-xy;
     @extend %flex-column-center-xy;
 
     @media (max-width: $md) {
-      width: 35rem;
       padding: 2rem;
     }
   }
@@ -144,6 +156,7 @@
     @extend %text-14;
 
     color: var(--green);
+    text-align: left; // *
     font-weight: 400;
     transition: color 0.3s;
 
@@ -255,7 +268,11 @@
   }
 }
 
-.popup.is-active {
-  opacity: 1;
-  pointer-events: auto;
+.swal2-popup {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.swal2-html-container {
+  margin: 0 !important;
 }

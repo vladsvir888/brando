@@ -1,0 +1,22 @@
+.catalog-section {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    // gap: var(--gap-cards);
+    gap: 1rem;
+    // padding-bottom: 4rem;
+
+    @media (max-width: $lg) {
+      grid-template-columns: repeat(2, 1fr);
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__bottom-block {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

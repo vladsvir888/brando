@@ -1,0 +1,112 @@
+.sidebar {
+  padding: 4rem;
+  background-color: var(--gray4);
+
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: $sm) {
+    padding: 2rem;
+  }
+
+  &__saving {
+    @extend %flex-between;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__delivery {
+    @extend %flex-between;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__num-products {
+    @extend %flex-between;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__total {
+    @extend %flex-between;
+    flex-wrap: wrap;
+
+    @extend %text-20;
+    font-weight: 700;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__order-btn {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1.8rem 3rem;
+    width: 100%;
+    border: none;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--hover-green);
+    }
+
+    &:active {
+      background-color: var(--active-green);
+    }
+
+    @media (max-width: $md) {
+      width: 100%;
+      padding: 1.8rem 4rem;
+    }
+  }
+
+  &__policy {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--gray3);
+
+    a {
+      color: var(--green);
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--hover-green);
+      }
+    }
+  }
+
+  &__title {
+    @extend %text-40;
+    text-transform: uppercase;
+  }
+}

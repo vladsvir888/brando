@@ -1,0 +1,55 @@
+.basket-section {
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 38rem;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__bottom-info {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+
+    @extend %flex-between;
+    flex-wrap: wrap;
+
+    > * {
+      margin-bottom: 2rem;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+
+    div {
+      @extend %flex-center-y;
+    }
+  }
+
+  &__info-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: var(--green);
+    margin-right: 1rem;
+  }
+
+  &__info-btn {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    border: 0.1rem solid var(--gray5);
+    background-color: transparent;
+    padding: 2.3rem 4rem;
+    transition: border 0.3s;
+
+    &:hover {
+      border: 0.1rem solid var(--green);
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+    isActionPage: true,
+  }
+} %}
+<main class="actions-text pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Акции',
+      }
+    } %}
+    <section class="actions-text__actions-info pb15">
+      <h1 class="section-title">Акции</h1>
+      <div class="actions-text__actions-top">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/actions-text/01.webp">
+          <img class="lazy actions-text__img" src="./assets/images/pixel.png" data-src="./assets/images/actions-text/01.jpg" alt="img">
+        </picture>
+        <div class="actions-text__actions-content">
+          <h2 class="actions-text__actions-title">
+            <span>Акция!</span> При покупке косметики Noreva Laboratoires – мицелярная вода в подарок!
+          </h2>
+          <div class="actions-text__actions-descr">
+            <div class="actions-text__actions-text">
+              Период проведения акции: с 15 октября до 31 октября 2020
+            </div>
+            <div class="actions-text__actions-text">
+              До конца акции:
+            </div>
+            {% include "../blocks/timer/timer.twig" %}
+          </div>
+        </div>
+      </div>
+      <div class="block-text pb6">
+        <p>
+          Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации систем массового участия.
+        </p>
+        <p>
+          Повседневная практика показывает, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании форм развития. Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа системы обучения кадров, соответствует насущным потребностям.
+        </p>
+        <p>
+          Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения новых предложений. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании новых предложений.
+        </p>
+      </div>
+    </section>
+    <section class="actions-text__action-products pb15">
+      <h2 class="section-title">Товары, берущие участие в акции</h2>
+      <div class="catalog-section__grid">
+        {% include "../blocks/product-card/product-card.twig" with {
+          card: {
+            items: [
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "green",
+                label: "new",
+                labelColor: "green",
+                jpgImg: "./assets/images/product-card/01.jpg",
+                webpImg: "./assets/images/product-card/01.webp",
+              },
+              {
+                title: "Baldinni",
+                descr: "женские красные лодочки",
+                currentPrice: "10 550 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/02.jpg",
+                webpImg: "./assets/images/product-card/02.webp",
+              },
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "red",
+                oldPrice: "3 200 ₽",
+                label: "sale",
+                labelColor: "red",
+                jpgImg: "./assets/images/product-card/03.jpg",
+                webpImg: "./assets/images/product-card/03.webp",
+              },
+              {
+                title: "SCHUTZ",
+                descr: "женские зеленые кожаные лодочки",
+                currentPrice: "8 350 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/04.jpg",
+                webpImg: "./assets/images/product-card/04.webp",
+              },
+
+              {
+                title: "PEPE JEANS",
+                descr: "женские черные ботинки BOBBING CITY",
+                currentPrice: "2 350 ₽",
+                currentPriceColor: "green",
+                label: "new",
+                labelColor: "green",
+                jpgImg: "./assets/images/product-card/01.jpg",
+                webpImg: "./assets/images/product-card/01.webp",
+              },
+              {
+                title: "Baldinni",
+                descr: "женские красные лодочки",
+                currentPrice: "10 550 ₽",
+                currentPriceColor: "green",
+                jpgImg: "./assets/images/product-card/02.jpg",
+                webpImg: "./assets/images/product-card/02.webp",
+              },
+            ]
+          }
+        } %}
+      </div>
+    </section>
+    <section class="actions-text__another-actions pb15">
+      <h2 class="section-title">Другие акции</h2>
+      <div class="actions-text__another-actions-wrap">
+        {% include "../blocks/actions/card.twig" with {
+          action: {
+            cards: [
+              {
+                period: "15 октября - 22 октября",
+                title: "Акция! Скидки до 80% на женское и мужское белье Triumph, Diwari, Leilieve + бесплатная доставка от 799 грн!",
+                days: "7",
+                datetime: "P7D",
+                jpgImg: "./assets/images/action-cards/01.jpg",
+                webpImg: "./assets/images/action-cards/01.webp",
+              },
+              {
+                period: "18 ноября - 30 ноября",
+                title: "Акция! Скидка 29% на декоративное освещение Декора!",
+                days: "12",
+                datetime: "P12D",
+                jpgImg: "./assets/images/action-cards/02.jpg",
+                webpImg: "./assets/images/action-cards/02.webp",
+              },
+              {
+                period: "6 апреля - 11 апреля",
+                title: "Акция! Скидки до 80% на детскую одежду + бесплатная доставка от 799 грн!",
+                days: "5",
+                datetime: "P5D",
+                jpgImg: "./assets/images/action-cards/03.jpg",
+                webpImg: "./assets/images/action-cards/03.webp",
+              },
+            ]
+          }
+        } %}
+      </div>
+    </section>
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

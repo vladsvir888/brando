@@ -152,6 +152,11 @@ img {
   text-transform: uppercase;
   color: var(--black);
   padding-bottom: 3rem;
+
+  @media (max-width: $sm) {
+    font-size: 3rem;
+    line-height: 3.8rem;
+  }
 }
 
 .pb6 {

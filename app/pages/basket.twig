@@ -1,0 +1,77 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+<main class="basket pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Личный кабинет',
+        item3: 'Корзина'
+      }
+    } %}
+    <section class="basket-section pb15">
+      <h1 class="section-title">Корзина</h1>
+      <div class="basket-section__wrap">
+        <div class="basket-section__start">
+          {% include "../blocks/product-item/product-item.twig" with {
+            productItem: {
+              items: [
+                {
+                  jpgImg: './assets/images/product-item/01.jpg',
+                  webpImg: './assets/images/product-item/01.webp',
+                  info: {
+                    title: 'SCHUTZ',
+                    descr: 'женские зеленые кожаные лодочки',
+                    article: '2457448',
+                    size: '38',
+                    color: 'темно-зеленый'
+                  },
+                  price: '4 550 ₽',
+                  discountPrice: '2 350 ₽',
+                },
+                {
+                  jpgImg: './assets/images/product-item/02.jpg',
+                  webpImg: './assets/images/product-item/02.webp',
+                  info: {
+                    title: 'SCHUTZ',
+                    descr: 'женские зеленые кожаные сапоги',
+                    article: '4433218',
+                    size: '38',
+                    color: 'темно-зеленый'
+                  },
+                  price: '7 000 ₽',
+                  discountPrice: '5 599 ₽',
+                }
+              ]
+            }
+          } %}
+          <div class="basket-section__bottom-info">
+            <div>
+              <svg class="basket-section__info-icon" viewBox="0 0 100 100">
+                <use xlink:href="./assets/images/sprite.svg#info"></use>
+              </svg>
+              Товар в штучном количестве может быть продан в данный момент.
+            </div>
+            <button class="basket-section__info-btn">Продолжить покупки</button>
+          </div>
+        </div>
+        {% include "../blocks/sidebar/sidebar.twig" with {
+          saving: '450 ₽',
+          total: {
+            text: 'Итого к оплате',
+            sum: '21 450 ₽',
+          },
+          btnText: 'Оформить заказ',
+        } %}
+      </div>
+    </section>
+    {% include "../blocks/viewed-products/viewed-products.twig" %}
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

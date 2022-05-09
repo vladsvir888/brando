@@ -1,67 +1,60 @@
 app.popups = {
   init() {
-    const popupBtns = document.querySelectorAll('[data-popup]');
-    const popupCloseBtns = document.querySelectorAll('.js-popup-close');
-    const popupOverlays = document.querySelectorAll('.js-popup');
+    const signinBtn = document.querySelector('.js-signin-btn');
 
-    if (popupBtns.length === 0) return;
+    if (!signinBtn) return;
 
-    function pressedEscHandler(e) {
-      if (e.key === 'Escape') {
-        document.querySelector('.js-popup.is-active').classList.remove('is-active');
-        document.body.style.overflow = '';
-      }
+    const signinPopup = document.getElementById('signin-popup');
 
-      document.removeEventListener('keydown', pressedEscHandler);
-    }
+    if (!signinPopup) return;
 
-    function openPopup(popup) {
-      if (!popup) return;
+    const signinPopupWrap = signinPopup.querySelector('.popup__wrap');
 
-      document.querySelectorAll('.js-popup.is-active').forEach((activePopup) => activePopup.classList.remove('is-active')); // close all popups before opening target popup
-
-      popup.classList.add('is-active');
-      document.body.style.overflow = 'hidden';
-
-      document.addEventListener('keydown', pressedEscHandler);
-    }
-
-    function closePopup(popup) {
-      if (!popup) return;
-
-      popup.classList.remove('is-active');
-      document.body.style.overflow = '';
-
-      document.removeEventListener('keydown', pressedEscHandler);
-    }
-
-    popupBtns.forEach((popupBtn) => {
-      popupBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        const popup = document.querySelector(popupBtn.dataset.popup);
-
-        openPopup(popup);
-      });
-
-      popupBtn.addEventListener('keydown', (e) => { // disable the default behavior of space (open popup)
-        if (e.code === 'Space') e.preventDefault();
+    signinBtn.addEventListener('click', () => {
+      Swal.fire({
+        showConfirmButton: false,
+        html: signinPopupWrap,
+        width: '50rem',
       });
     });
 
-    popupCloseBtns.forEach((popupCloseBtn) => {
-      popupCloseBtn.addEventListener('click', () => {
-        const popup = popupCloseBtn.closest('.js-popup');
+    const forgetBtn = document.querySelector('.js-forget-btn');
 
-        closePopup(popup);
+    if (!forgetBtn) return;
+
+    const passwordRecoveryPopup = document.getElementById('passw-recovery-popup');
+
+    if (!passwordRecoveryPopup) return;
+
+    const passwordRecoveryPopupWrap = passwordRecoveryPopup.querySelector('.popup__wrap');
+
+    forgetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      Swal.fire({
+        showConfirmButton: false,
+        html: passwordRecoveryPopupWrap,
+        width: '50rem',
       });
     });
 
-    popupOverlays.forEach((popupOverlay) => {
-      popupOverlay.addEventListener('click', (e) => {
-        if (e.target.classList.contains('js-popup')) {
-          closePopup(e.target);
-        }
+    const noAccBtn = document.querySelector('.js-noacc-btn');
+
+    if (!noAccBtn) return;
+
+    const signupPopup = document.getElementById('signup-popup');
+
+    if (!signinPopup) return;
+
+    const signupPopupWrap = signupPopup.querySelector('.popup__wrap');
+
+    noAccBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      Swal.fire({
+        showConfirmButton: false,
+        html: signupPopupWrap,
+        width: '50rem',
       });
     });
   },

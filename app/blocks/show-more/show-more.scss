@@ -1,0 +1,13 @@
+.show-more {
+  @extend %text-16;
+  font-weight: 500;
+  width: 100%;
+  border: 0.1rem solid var(--gray5);
+  background-color: transparent;
+  padding: 1rem 2rem;
+  transition: border 0.3s;
+
+  &:hover {
+    border: 0.1rem solid var(--green);
+  }
+}

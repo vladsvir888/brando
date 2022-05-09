@@ -6,14 +6,18 @@ app.videoAlert = {
 
     video.addEventListener('click', () => {
       Swal.fire({
-        width: 1200,
-        html: '<iframe class="video-iframe" src="https://www.youtube.com/embed/hhMxWSvXFVU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        showCloseButton: true,
+        width: '120rem',
         showConfirmButton: false,
-        customClass: {
-          popup: 'iframe-popup',
-          closeButton: 'iframe-popup-close',
-        },
+        html: `
+        <div class="video-iframe">
+          <iframe class="video-iframe__video" src="https://www.youtube.com/embed/hhMxWSvXFVU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <button class="video-iframe__close-btn" onclick="Swal.close(); return false;">
+            <svg class="video-iframe__close-icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#popup-close"></use>
+            </svg>
+          </button>
+        </div>
+        `,
       });
     });
   },
