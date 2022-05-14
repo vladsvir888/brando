@@ -1,10 +1,10 @@
-<div id="myDatepicker" class="datepicker">
+<div id="myDatepicker" class="datepicker {{ datepicker.addClass }}">
 
   <div class="date">
-    <label class="contacts-form__input-text" for="id-textbox-1">Удобная дата доставки</label>
+    <label class="contacts-form__input-text" for="id-textbox-1">{{ datepicker.text }}</label>
 
     <div class="group">
-      <input class="contacts-form__input contacts-form__calendar-input" type="text" placeholder="месяц/день/год" id="id-textbox-1" aria-describedby="id-description-1">
+      <input class="contacts-form__input contacts-form__calendar-input {{ datepicker.modificator }}" type="text" placeholder="{{ datepicker.placeholder }}" id="id-textbox-1" aria-describedby="id-description-1">
       <button type="button" class="icon" aria-label="Choose Date">
         <svg class="contacts-form__calendar-icon" viewBox="0 0 100 100">
           <use xlink:href="./assets/images/sprite.svg#calendar"></use>

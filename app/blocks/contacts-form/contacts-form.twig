@@ -1,4 +1,4 @@
-<form action="/" class="contacts-form js-sort-wrap js-contacts-form" autocomplete="off">
+<form action="/" class="contacts-form contacts-form--{{ form.class }} js-sort-wrap js-contacts-form" autocomplete="off">
   <div class="contacts-form__start">
     <div class="contacts-form__item contacts-form__grid-item">
       <div class="contacts-form__title-block">
@@ -67,7 +67,74 @@
         <span class="contacts-form__input-text">Квартира</span>
         <input class="contacts-form__input" type="text" name="apartment">
       </label>
+      {% if form.datepickerInGrid is defined %}
+        {% include "../datepicker/datepicker.twig" with {
+          datepicker: {
+            text: "Дата рождения",
+            placeholder: "ММ/ДД/ГГ",
+            addClass: "contacts-form__label",
+            modificator: "contacts-form__calendar-input--width100",
+          }
+        } %}
+      {% endif %}
+
+      {% if form.genderBlock is defined %}
+      <div class="contacts-form__label contacts-form__empty-label"></div>
+      <div class="contacts-form__label contacts-form__radio-label">
+        <span class="contacts-form__input-text contacts-form__radio-text">Пол</span>
+        <div class="contacts-form__radio-wrap">
+          {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+            radio: {
+              text: 'Женский',
+              name: 'gender',
+            }
+          } %}
+          {% include "../catalog-filter/radio-btns/radio-btns.twig" with {
+            radio: {
+              text: 'Мужской',
+              name: 'gender',
+            }
+          } %}
+        </div>
+      </div>
+      {% endif %}
     </div>
+
+    {% if form.entryBlock is defined %}
+    <div class="contacts-form__item contacts-form__grid-item">
+      <div class="contacts-form__title-block">
+        <span class="contacts-form__title-num">2</span>
+        <div class="contacts-form__title">Данные для входа в профиль</div>
+      </div>
+      <label class="contacts-form__label">
+        <span class="contacts-form__input-text">Пароль</span>
+        <div class="contacts-form__passw-wrap js-passw-wrap">
+          <input class="contacts-form__input" type="password" name="passw" placeholder="Пароль">
+          <button class="passw-toggle js-passw-toggle" type="button">
+            <svg class="passw-icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#show-passw"></use>
+            </svg>
+          </button>
+        </div>
+      </label>
+      <label class="contacts-form__label">
+        <span class="contacts-form__input-text">Пароль повтор</span>
+        <div class="contacts-form__passw-wrap js-passw-wrap">
+          <input class="contacts-form__input" type="password" name="passw_repeat" placeholder="Повторите пароль">
+          <button class="passw-toggle js-passw-toggle" type="button">
+            <svg class="passw-icon" viewBox="0 0 100 100">
+              <use xlink:href="./assets/images/sprite.svg#show-passw"></use>
+            </svg>
+          </button>
+        </div>
+      </label>
+    </div>
+    {% endif %}
+
+    {% if form.policyBlock is defined %}
+    {% endif %}
+
+    {% if form.wayGetOrder is defined %}
     <div class="contacts-form__item contacts-form__receiving-item">
       <div class="contacts-form__title-block">
         <span class="contacts-form__title-num">2</span>
@@ -84,7 +151,12 @@
         <div class="contacts-form__hidden-content">
           <div class="contacts-form__hidden-text">Бесплатная доставка и примерка</div>
           <div class="contacts-form__hidden-wrap">
-            {% include "../datepicker/datepicker.twig" %}
+            {% include "../datepicker/datepicker.twig" with {
+              datepicker: {
+                text: "Удобная дата доставки",
+                placeholder: "месяц/день/год",
+              }
+            } %}
             <div class="contacts-form__label">
               <span class="contacts-form__input-text">Удобное время доставки</span>
               <div class="contacts-form__input contacts-form__delivery-input contacts-form__select js-filter-select">
@@ -121,6 +193,9 @@
         }
       } %}
     </div>
+    {% endif %}
+
+    {% if form.wayPayment is defined %}
     <div class="contacts-form__item contacts-form__payment-item">
       <div class="contacts-form__title-block">
         <span class="contacts-form__title-num">3</span>
@@ -151,6 +226,9 @@
         }
       } %}
     </div>
+    {% endif %}
+
+    {% if form.comment is defined %}
     <div class="contacts-form__item contacts-form__commentary-item">
       <div class="contacts-form__title-block">
         <span class="contacts-form__title-num">4</span>
@@ -161,7 +239,10 @@
         <textarea class="contacts-form__input contacts-form__textarea" name="textarea"></textarea>
       </label>
     </div>
+    {% endif %}
+
   </div>
+  {% if form.sidebar is defined %}
   <div class="contacts-form__end">
     {% include "../sidebar/sidebar.twig" with {
       title: true,
@@ -177,4 +258,5 @@
     } %}
     <button class="contacts-form__edit-btn" type="button">Редактировать заказ</button>
   </div>
+  {% endif %}
 </form>

@@ -1,5 +1,20 @@
 {% extends "../blocks/layout/base.twig" %}
 {% block content %}
+{% include "../blocks/popups/popups.twig" with {
+  popup: {
+    sign: true,
+    id: "callback-popup",
+    class: "callback-popup",
+    title: "Позвоните нам",
+    btnText: "Отправить",
+    isPhone: true,
+    placeholderPhone: "Ваш телефон",
+    isSubtitle: true,
+    subtitleText: "Оставьте заявку, и мы свяжемся с вами в ближайшее время",
+    isName: true,
+    placeholderName: "Представьтесь",
+  }
+} %}
 {% include "../blocks/header/header.twig" with {
   header: {
     auth: false,
@@ -68,7 +83,7 @@
               background: "light-gray",
             }
           } %}
-          <button class="section-contacts__btn">Связаться с нами</button>
+          <button class="section-contacts__btn js-callback-btn">Связаться с нами</button>
         </div>
         <div class="section-contacts__middle">
           <div id="map" class="section-contacts__map"></div>
@@ -124,7 +139,7 @@
               background: "light-gray",
             }
           } %}
-          <button class="section-contacts__btn">Связаться с нами</button>
+          <button class="section-contacts__btn js-callback-btn">Связаться с нами</button>
         </div>
       </div>
     </section>

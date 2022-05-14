@@ -4,57 +4,64 @@ app.popups = {
 
     if (!signinBtn) return;
 
-    const signinPopup = document.getElementById('signin-popup');
-
-    if (!signinPopup) return;
-
-    const signinPopupWrap = signinPopup.querySelector('.popup__wrap');
+    // клонируем попап входа
+    const signinPopup = document.querySelector('.signin-popup').querySelector('.popup__wrap').cloneNode(true);
 
     signinBtn.addEventListener('click', () => {
       Swal.fire({
         showConfirmButton: false,
-        html: signinPopupWrap,
+        html: signinPopup,
         width: '50rem',
       });
     });
 
-    const forgetBtn = document.querySelector('.js-forget-btn');
+    // в нем ищем кнопку, которая открывает попап восстановление пароля
+    const forgetBtn = signinPopup.querySelector('.js-forget-btn');
 
     if (!forgetBtn) return;
 
-    const passwordRecoveryPopup = document.getElementById('passw-recovery-popup');
-
-    if (!passwordRecoveryPopup) return;
-
-    const passwordRecoveryPopupWrap = passwordRecoveryPopup.querySelector('.popup__wrap');
+    const passwordRecoveryPopup = document.querySelector('.passw-recovery-popup').querySelector('.popup__wrap').cloneNode(true);
 
     forgetBtn.addEventListener('click', (e) => {
       e.preventDefault();
 
       Swal.fire({
         showConfirmButton: false,
-        html: passwordRecoveryPopupWrap,
+        html: passwordRecoveryPopup,
         width: '50rem',
       });
     });
 
-    const noAccBtn = document.querySelector('.js-noacc-btn');
+    // в нем ищем кнопку, которая открывает попап зарегистрироваться
+    const noAccBtn = signinPopup.querySelector('.js-noacc-btn');
 
     if (!noAccBtn) return;
 
-    const signupPopup = document.getElementById('signup-popup');
-
-    if (!signinPopup) return;
-
-    const signupPopupWrap = signupPopup.querySelector('.popup__wrap');
+    const signupPopup = document.querySelector('.signup-popup').querySelector('.popup__wrap').cloneNode(true);
 
     noAccBtn.addEventListener('click', (e) => {
       e.preventDefault();
 
       Swal.fire({
         showConfirmButton: false,
-        html: signupPopupWrap,
+        html: signupPopup,
         width: '50rem',
+      });
+    });
+
+    const cbBtns = document.querySelectorAll('.js-callback-btn');
+
+    if (cbBtns.length === 0) return;
+
+    const cbPopup = document.querySelector('.callback-popup').querySelector('.popup__wrap');
+
+    cbBtns.forEach((cbBtn) => {
+      cbBtn.addEventListener('click', () => {
+        Swal.fire({
+          showConfirmButton: false,
+          html: cbPopup,
+          width: '50rem',
+        });
       });
     });
   },

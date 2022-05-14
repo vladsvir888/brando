@@ -6,6 +6,8 @@ app.hiddenContent = {
 
     const hiddenContent = document.querySelector('.contacts-form__hidden-content');
 
+    if (!hiddenContent) return;
+
     contactsForm.addEventListener('click', (e) => {
       const { target } = e;
 

@@ -1,5 +1,20 @@
 {% extends "../blocks/layout/base.twig" %}
 {% block content %}
+{% include "../blocks/popups/popups.twig" with {
+  popup: {
+    sign: true,
+    id: "callback-popup",
+    class: "callback-popup",
+    title: "Позвоните нам",
+    btnText: "Отправить",
+    isPhone: true,
+    placeholderPhone: "Ваш телефон",
+    isSubtitle: true,
+    subtitleText: "Оставьте заявку, и мы свяжемся с вами в ближайшее время",
+    isName: true,
+    placeholderName: "Представьтесь",
+  }
+} %}
 {% include "../blocks/header/header.twig" with {
   header: {
     auth: false,
@@ -30,7 +45,7 @@
           <div class="partners__info-descr">
             Мы расширяем ассортимент fashion и lifestyle-брендов на маркетплейс. Продавайте товары на прозрачных условиях вместе с другими официальными брендами
           </div>
-          <button class="partners__info-btn">Стать партнером</button>
+          <button class="partners__info-btn js-callback-btn">Стать партнером</button>
           <ol class="partners__info-list">
             <li class="partners__info-item">
               <span class="partners__info-num">01</span>

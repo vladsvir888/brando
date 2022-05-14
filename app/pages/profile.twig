@@ -1,14 +1,5 @@
 {% extends "../blocks/layout/base.twig" %}
 {% block content %}
-{% include "../blocks/popups/popups.twig" with {
-  popup: {
-    ordering: true,
-    id: "ordering-popup",
-    class: "ordering-popup",
-    title: "Ваш заказ №99999",
-    btnText: "Хорошо",
-  }
-} %}
 {% include "../blocks/header/header.twig" with {
   header: {
     auth: false,
@@ -20,19 +11,18 @@
       breadcrumbs: {
         item1: 'Главная',
         item2: 'Личный кабинет',
-        item3: 'Корзина',
-        item4: 'Оформление заказа'
+        item3: 'Мой профиль',
       }
     } %}
     <section class="ordering-section pb15 js-catalog-filter">
-      <h1 class="section-title">Оформление заказа</h1>
+      <h1 class="section-title">Мой профиль</h1>
       {% include "../blocks/contacts-form/contacts-form.twig" with {
         form: {
-          sidebar: true,
-          class: "ordering",
-          wayGetOrder: true,
-          wayPayment: true,
-          comment: true,
+          class: "profile",
+          datepickerInGrid: true,
+          genderBlock: true,
+          entryBlock: true,
+          policyBlock: true,
         }
       } %}
     </section>

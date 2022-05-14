@@ -20,7 +20,7 @@
     <button class="cabinet-popup__exit-btn btn">Выйти</button>
   </div>
 {% elseif popup.sign %}
-  <div id="{{ popup.id }}" class="popup {{ popup.active }}">
+  <div id="{{ popup.id }}" class="popup {{ popup.class }} {{ popup.active }}">
     <div class="popup__wrap">
       <button class="popup__btn-close" onclick="Swal.close(); return false;">
         <svg class="popup__close-icon" viewBox="0 0 100 100">
@@ -36,7 +36,7 @@
 
       {% if popup.isSubtitle %}
         <div class="popup__subtitle">
-          Пожалуйста, введите ваш адрес электронной почты, на который мы отправим ссылку для восстановления пароля
+          {{ popup.subtitleText }}
         </div>
       {% endif %}
 
@@ -45,15 +45,19 @@
           <input class="popup-input" type="text" name="email" placeholder="Введите email">
         {% endif %}
 
+        {% if popup.isName %}
+          <input class="popup-input" type="text" name="name" placeholder="{{ popup.placeholderName }}">
+        {% endif %}
+
         {% if popup.isPhone %}
           <input class="popup-input phone" type="text" name="phone" placeholder="{{ popup.placeholderPhone }}">
         {% endif %}
 
         {% if popup.isPassw %}
-          <div class="popup__passw-block">
+          <div class="popup__passw-block js-passw-wrap">
             <input class="popup-input popup__passw-input" type="password" name="passw" placeholder="{{ popup.placeholderPassw }}">
-            <button class="popup__passw-toggle js-passw-toggle">
-              <svg class="popup__passw-icon" viewBox="0 0 100 100">
+            <button class="passw-toggle js-passw-toggle" type="button">
+              <svg class="passw-icon" viewBox="0 0 100 100">
                 <use xlink:href="./assets/images/sprite.svg#show-passw"></use>
               </svg>
             </button>
@@ -63,8 +67,8 @@
         {% if popup.repeatPassw %}
           <div class="popup__passw-block">
             <input class="popup-input" type="password" name="passw_repeat" placeholder="Повторите пароль">
-            <button class="popup__passw-toggle js-passw-toggle">
-              <svg class="popup__passw-icon" viewBox="0 0 100 100">
+            <button class="passw-toggle js-passw-toggle" type="button">
+              <svg class="passw-icon" viewBox="0 0 100 100">
                 <use xlink:href="./assets/images/sprite.svg#show-passw"></use>
               </svg>
             </button>
@@ -84,6 +88,30 @@
           <a class="popup__noacc-link btn js-noacc-btn" href="#">Зарегистрироваться</a>
         </div>
       {% endif %}
+    </div>
+  </div>
+{% elseif popup.ordering %}
+  <div id="{{ popup.id }}" class="popup {{ popup.class }}">
+    <div class="popup__wrap">
+      <button class="popup__btn-close" onclick="Swal.close(); return false;">
+        <svg class="popup__close-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#popup-close"></use>
+        </svg>
+      </button>
+      <div class="popup__icon-wrap">
+        <svg class="popup__icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#popup-success"></use>
+        </svg>
+      </div>
+      <div class="ordering-popup__content">
+        <div class="ordering-popup__title">{{ popup.title }}</div>
+        <div class="ordering-popup__subtitle">от 28.04.2020 13:37:16 </div>
+        <div class="ordering-popup__title ordering-popup__title--green">Успешно оформлен</div>
+      </div>
+      <div class="ordering-popup__subtitle ordering-popup__bottom-text">
+        В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа.
+      </div>
+      <button class="popup__btn" onclick="Swal.close(); return false;">{{ popup.btnText }}</button>
     </div>
   </div>
 {% endif %}

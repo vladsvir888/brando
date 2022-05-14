@@ -57,7 +57,15 @@ app.validation = {
       validate();
 
       if (!document.querySelector('.error')) {
-        console.log('success');
+        const orderingPopup = document.querySelector('.ordering-popup').querySelector('.popup__wrap').cloneNode(true);
+
+        setTimeout(() => {
+          Swal.fire({
+            showConfirmButton: false,
+            html: orderingPopup,
+            width: '50rem',
+          });
+        }, 1000);
       }
     });
   },

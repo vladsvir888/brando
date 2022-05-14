@@ -1,11 +1,22 @@
 .contacts-form {
-  display: grid;
-  grid-template-columns: 1fr 38rem;
-  gap: 4rem;
-  align-items: start;
+  // display: grid;
+  // grid-template-columns: 1fr 38rem;
+  // gap: 4rem;
+  // align-items: start;
 
-  @media (max-width: $lg) {
-    grid-template-columns: 1fr;
+  // @media (max-width: $lg) {
+  //   grid-template-columns: 1fr;
+  // }
+
+  &--ordering {
+    display: grid;
+    grid-template-columns: 1fr 38rem;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -353,6 +364,10 @@
     @media (max-width: $sm) {
       width: 100%;
     }
+
+    &--width100 {
+      width: 100%;
+    }
   }
 
   &__calendar-icon {
@@ -373,6 +388,32 @@
     @media (max-width: $sm) {
       width: 100%;
     }
+  }
+
+  &__radio-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 3.5rem;
+
+        @media (max-width: $md) {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &__empty-label {
+    @media (max-width: $lg) {
+      display: none;
+    }
+  }
+
+  &__passw-wrap {
+    position: relative;
   }
 }
 
@@ -396,6 +437,10 @@
 .radio-style-text {
   font-size: 1.6rem;
   line-height: 2rem;
+
+  @media (max-width: $md) {
+    font-size: 1.3rem;
+  }
 }
 
 .radio:checked + .radio-style span {

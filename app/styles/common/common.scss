@@ -202,3 +202,23 @@ img {
   position: absolute;
   clip: rect(0 0 0 0);
 }
+
+.passw-toggle {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 2rem;
+
+  @extend %pos-center-y;
+}
+
+.passw-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: var(--gray3);
+  pointer-events: none;
+
+  &--hide {
+    stroke: var(--gray3);
+  }
+}

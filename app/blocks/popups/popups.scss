@@ -179,6 +179,8 @@
     padding: 1rem;
     transition: background-color 0.3s;
 
+    width: 100%;
+
     &:hover {
       background-color: var(--hover-green);
     }
@@ -247,23 +249,70 @@
     position: relative;
   }
 
-  &__passw-toggle {
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    right: 2rem;
+  // &__passw-toggle {
+  //   border: none;
+  //   background-color: transparent;
+  //   position: absolute;
+  //   right: 2rem;
 
-    @extend %pos-center-y;
+  //   @extend %pos-center-y;
+  // }
+
+  // &__passw-icon {
+  //   width: 2.4rem;
+  //   height: 2.4rem;
+  //   fill: var(--gray3);
+  //   pointer-events: none;
+
+  //   &--hide {
+  //     stroke: var(--gray3);
+  //   }
+  // }
+}
+
+// ordering-popup
+.ordering-popup {
+  &__title {
+    @extend %text-20;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+
+    &--green {
+      color: var(--green);
+    }
   }
 
-  &__passw-icon {
-    width: 2.4rem;
-    height: 2.4rem;
-    fill: var(--gray3);
-    pointer-events: none;
+  &__subtitle {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--white);
+  }
 
-    &--hide {
-      stroke: var(--gray3);
+  &__content {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__bottom-text {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+// callback-popup
+.callback-popup {
+  &__text {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--white);
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
     }
   }
 }
