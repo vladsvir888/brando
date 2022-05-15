@@ -5,7 +5,9 @@ app.popups = {
     if (!signinBtn) return;
 
     // клонируем попап входа
-    const signinPopup = document.querySelector('.signin-popup').querySelector('.popup__wrap').cloneNode(true);
+    // const signinPopup = document.querySelector('.signin-popup').querySelector('.popup__wrap').cloneNode(true);
+
+    const signinPopup = document.querySelector('.signin-popup').querySelector('.popup__wrap');
 
     signinBtn.addEventListener('click', () => {
       Swal.fire({
@@ -13,6 +15,8 @@ app.popups = {
         html: signinPopup,
         width: '50rem',
       });
+
+      // app.visibilityPassw.init();
     });
 
     // в нем ищем кнопку, которая открывает попап восстановление пароля
@@ -20,7 +24,9 @@ app.popups = {
 
     if (!forgetBtn) return;
 
-    const passwordRecoveryPopup = document.querySelector('.passw-recovery-popup').querySelector('.popup__wrap').cloneNode(true);
+    // const passwordRecoveryPopup = document.querySelector('.passw-recovery-popup').querySelector('.popup__wrap').cloneNode(true);
+
+    const passwordRecoveryPopup = document.querySelector('.passw-recovery-popup').querySelector('.popup__wrap');
 
     forgetBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -37,7 +43,9 @@ app.popups = {
 
     if (!noAccBtn) return;
 
-    const signupPopup = document.querySelector('.signup-popup').querySelector('.popup__wrap').cloneNode(true);
+    // const signupPopup = document.querySelector('.signup-popup').querySelector('.popup__wrap').cloneNode(true);
+
+    const signupPopup = document.querySelector('.signup-popup').querySelector('.popup__wrap');
 
     noAccBtn.addEventListener('click', (e) => {
       e.preventDefault();

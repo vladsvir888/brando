@@ -2,14 +2,10 @@ app.visibilityPassw = {
   init() {
     const passwBtns = document.querySelectorAll('.js-passw-toggle');
 
-    console.log(passwBtns);
-
     if (passwBtns.length === 0) return;
 
     passwBtns.forEach((passwBtn) => {
       passwBtn.addEventListener('click', () => {
-        // e.preventDefault();
-
         const parent = passwBtn.closest('.js-passw-wrap');
 
         const input = parent.querySelector('input');

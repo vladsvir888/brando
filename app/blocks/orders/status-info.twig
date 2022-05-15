@@ -1,0 +1,21 @@
+<dl class="status-info__list">
+  <div class="status-info__item">
+    <dt class="status-info__term">{{ status.name }}</dt>
+    <dd class="status-info__descr status-info__descr--{{ status.colorValue }}">{{ status.value }}</dd>
+  </div>
+
+  {% if status.addInfo is defined %}
+    <div class="status-info__item">
+      <dt class="status-info__term">Способ доставки:</dt>
+      <dd class="status-info__descr">Доставка курьером</dd>
+    </div>
+    <div class="status-info__item">
+      <dt class="status-info__term">Оплачен:</dt>
+      <dd class="status-info__descr">Да</dd>
+    </div>
+    <div class="status-info__item">
+      <dt class="status-info__term">Способ оплаты:</dt>
+      <dd class="status-info__descr">Оплата на сайте</dd>
+    </div>
+  {% endif %}
+</dl>

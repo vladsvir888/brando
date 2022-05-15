@@ -1,0 +1,34 @@
+<div class="orders-section__header-item">
+  <div class="orders-section__status-order">
+    <div class="orders-section__status-top">
+      <span class="orders-section__status-number">{{ order.number }}</span>
+      <span class="orders-section__status-date">{{ order.date }}</span>
+    </div>
+    <div class="orders-section__status-bottom orders-section__status-bottom--{{ order.statusColor }}">{{ order.status }}</div>
+  </div>
+  <div class="orders-section__sum-order">
+    <span class="orders-section__sum-title">Сумма заказа:</span>
+    <span class="orders-section__sum-value">{{ order.sum }}</span>
+  </div>
+  <div class="orders-section__product-order">
+    <div class="orders-section__product-wrap">
+      <picture>
+        <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ order.webpImg1 }}">
+        <img class="lazy orders-section__img" src="./assets/images/pixel.png" data-src="{{ order.jpgImg1 }}" alt="img">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ order.webpImg2 }}">
+        <img class="lazy orders-section__img" src="./assets/images/pixel.png" data-src="{{ order.jpgImg2 }}" alt="img">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="{{ order.webpImg3 }}">
+        <img class="lazy orders-section__img" src="./assets/images/pixel.png" data-src="{{ order.jpgImg3 }}" alt="img">
+      </picture>
+    </div>
+    <button class="orders-section__btn">
+      <svg class="orders-section__btn-icon" viewBox="0 0 100 100">
+        <use xlink:href="./assets/images/sprite.svg#order-arrow"></use>
+      </svg>
+    </button>
+  </div>
+</div>

@@ -65,7 +65,7 @@
         {% endif %}
 
         {% if popup.repeatPassw %}
-          <div class="popup__passw-block">
+          <div class="popup__passw-block js-passw-wrap">
             <input class="popup-input" type="password" name="passw_repeat" placeholder="Повторите пароль">
             <button class="passw-toggle js-passw-toggle" type="button">
               <svg class="passw-icon" viewBox="0 0 100 100">
@@ -91,7 +91,7 @@
     </div>
   </div>
 {% elseif popup.ordering %}
-  <div id="{{ popup.id }}" class="popup {{ popup.class }}">
+  <div id="{{ popup.id }}" class="popup {{ popup.class }} {{ popup.active }}">
     <div class="popup__wrap">
       <button class="popup__btn-close" onclick="Swal.close(); return false;">
         <svg class="popup__close-icon" viewBox="0 0 100 100">

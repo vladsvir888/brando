@@ -182,4 +182,22 @@
       background-color: var(--active-green);
     }
   }
+
+  &__amount {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 1.7rem;
+      }
+    }
+  }
+
+  &__amount-name {
+    @extend %text-14;
+    color: var(--gray3);
+  }
+
+  &__amount-value {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
 }

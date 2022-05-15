@@ -1,0 +1,23 @@
+{% include "../blocks/head/head.twig" %}
+{% include "../blocks/popups/popups.twig" with {
+  popup: {
+    sign: true,
+    id: "callback-popup",
+    active: "is-active",
+    class: "callback-popup",
+    title: "Позвоните нам",
+    btnText: "Отправить",
+    isPhone: true,
+    placeholderPhone: "Ваш телефон",
+    isSubtitle: true,
+    subtitleText: "Оставьте заявку, и мы свяжемся с вами в ближайшее время",
+    isName: true,
+    placeholderName: "Представьтесь",
+  }
+} %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+{% include "../blocks/link/link.twig" %}

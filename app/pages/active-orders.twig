@@ -1,0 +1,92 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+<main class="orders pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Личный кабинет',
+        item3: 'Активные заказы'
+      }
+    } %}
+    <section class="orders-section pb15">
+      <h1 class="section-title">Активные заказы</h1>
+      <div class="orders-section__wrap">
+        <div class="orders-section__item"></div>
+        <div class="orders-section__item">
+          {% include "../blocks/orders/header-item.twig" with {
+            order: {
+              number: "ЗАКАЗ №99999",
+              date: "от 21.01.2020",
+              status: "В обработке",
+              statusColor: "green",
+              sum: "5 599 ₽",
+              jpgImg1: "./assets/images/orders/01.jpg",
+              webpImg1: "./assets/images/orders/01.webp",
+              jpgImg2: "./assets/images/orders/02.jpg",
+              webpImg2: "./assets/images/orders/02.webp",
+              jpgImg3: "./assets/images/orders/03.jpg",
+              webpImg3: "./assets/images/orders/03.webp",
+            }
+          } %}
+          <div class="orders-section__hidden-item">
+            <div class="orders-section__start">
+              {% include "../blocks/orders/status-info.twig" with {
+                status: {
+                  name: "Статус:",
+                  value: "В доставке",
+                  colorValue: "green",
+                  addInfo: true,
+                }
+              } %}
+            </div>
+            <div class="orders-section__end">
+              {% include "../blocks/product-item/product-item.twig" with {
+                productItem: {
+                  items: [
+                    {
+                      jpgImg: './assets/images/product-item/01.jpg',
+                      webpImg: './assets/images/product-item/01.webp',
+                      info: {
+                        title: 'SCHUTZ',
+                        descr: 'женские зеленые кожаные лодочки',
+                        article: '2457448',
+                        size: '38',
+                        color: 'темно-зеленый'
+                      },
+                      price: '4 550 ₽',
+                      priceTitle: 'Цена',
+                      amount: 1,
+                    },
+                    {
+                      jpgImg: './assets/images/product-item/03.jpg',
+                      webpImg: './assets/images/product-item/03.webp',
+                      info: {
+                        title: 'SCHUTZ',
+                        descr: 'женские красные кожаные туфли',
+                        article: '4411329',
+                        size: '35',
+                        color: 'красные'
+                      },
+                      price: '7 000 ₽',
+                      priceTitle: 'Цена',
+                      amount: 1,
+                    }
+                  ]
+                }
+              } %}
+            </div>
+          </div>
+        </div>
+        <div class="orders-section__item"></div>
+      </div>
+    </section>
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

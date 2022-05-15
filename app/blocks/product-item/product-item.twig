@@ -28,12 +28,22 @@
     </div>
   </div>
   <div class="product-item__end">
+    {% if item.counter is defined %}
     <div class="product-item__counter">
       <div class="product-item__counter-name">Количество</div>
       {% include "../counter/counter.twig" %}
     </div>
+    {% endif %}
+
+    {% if item.amount is defined %}
+    <div class="product-item__amount">
+      <div class="product-item__amount-name">Количество</div>
+      <div class="product-item__amount-value">{{ item.amount }}</div>
+    </div>
+    {% endif %}
+
     <div class="product-item__price">
-      <div class="product-item__price-name">Стоимость</div>
+      <div class="product-item__price-name">{{ item.priceTitle }}</div>
       <div class="product-item__price-value">{{ item.price }}</div>
     </div>
     {% if item.discount is defined %}
@@ -42,10 +52,12 @@
       <div class="product-item__discount-value">{{ item.discount }}</div>
     </div>
     {% endif %}
+    {% if item.discountPrice %}
     <div class="product-item__price">
       <div class="product-item__price-name">Стоимость со скидкой</div>
       <div class="product-item__price-value product-item__discount-price-value">{{ item.discountPrice }}</div>
     </div>
+    {% endif %}
   </div>
   {% if item.basketBtn is defined %}
   <a href="#" class="product-item__basket-btn">В корзину</a>

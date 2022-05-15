@@ -132,6 +132,15 @@
     {% endif %}
 
     {% if form.policyBlock is defined %}
+    <div class="contacts-form__item contacts-form__policy-block">
+      <p class="contacts-form__policy">
+        Я согласен с условиями <a href="#">Публичной оферты и обработки персональных данных</a>
+      </p>
+      <div class="contacts-form__btns-block">
+        <button class="contacts-form__cancel-btn">Отменить</button>
+        <button class="contacts-form__save-btn">Сохранить</button>
+      </div>
+    </div>
     {% endif %}
 
     {% if form.wayGetOrder is defined %}

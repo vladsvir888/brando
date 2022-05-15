@@ -1,0 +1,157 @@
+.orders-section {
+  &__item {
+    padding: 2rem 0;
+    border-bottom: 0.1rem solid var(--gray5);
+
+    &:first-child {
+      border-top: 0.1rem solid var(--gray5);
+    }
+
+    &:last-child {
+      border-bottom: 0.1rem solid var(--gray5);
+    }
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__hidden-item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 2rem 10rem;
+  }
+
+  .product-item {
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__status-order {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__status-top {
+    > * {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__status-number {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+  }
+
+  &__status-date {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    color: var(--gray3);
+  }
+
+  &__status-bottom {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &--green {
+      color: var(--green);
+    }
+  }
+
+  &__sum-order {
+    > * {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__sum-title {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--gray3);
+  }
+
+  &__sum-value {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+  }
+
+  &__product-wrap {
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__btn {
+    background-color: var(--gray4);
+    width: 4rem;
+    height: 4rem;
+    border: none;
+  }
+
+  &__btn-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    fill: var(--gray3);
+  }
+}
+
+.status-info {
+  &__list {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  &__term {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--gray3);
+  }
+
+  &__descr {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+
+    &--green {
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    &--red {
+      color: var(--red);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}

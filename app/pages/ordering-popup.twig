@@ -1,0 +1,17 @@
+{% include "../blocks/head/head.twig" %}
+{% include "../blocks/popups/popups.twig" with {
+  popup: {
+    ordering: true,
+    id: "ordering-popup",
+    active: "is-active",
+    class: "ordering-popup",
+    title: "Ваш заказ №99999",
+    btnText: "Хорошо",
+  }
+} %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+{% include "../blocks/link/link.twig" %}
