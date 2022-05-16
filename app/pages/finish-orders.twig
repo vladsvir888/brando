@@ -11,18 +11,18 @@
       breadcrumbs: {
         item1: 'Главная',
         item2: 'Личный кабинет',
-        item3: 'Активные заказы'
+        item3: 'Завершенные заказы'
       }
     } %}
     <section class="orders-section pb15">
-      <h1 class="section-title">Активные заказы</h1>
+      <h1 class="section-title">Завершенные заказы</h1>
       <div class="orders-section__wrap">
         <div class="orders-section__item">
           {% include "../blocks/orders/header-item.twig" with {
             order: {
               number: "ЗАКАЗ №33211",
               date: "от 12.01.2020",
-              status: "В обработке",
+              status: "Успешно осуществлен",
               statusColor: "green",
               sum: "6 549 ₽",
               jpgImg1: "./assets/images/orders/01.jpg",
@@ -38,9 +38,8 @@
               {% include "../blocks/orders/status-info.twig" with {
                 status: {
                   name: "Статус:",
-                  value: "В доставке",
+                  value: "Успешно осуществлен",
                   colorValue: "green",
-                  addInfo: true,
                 }
               } %}
             </div>
@@ -87,8 +86,8 @@
             order: {
               number: "ЗАКАЗ №87442",
               date: "от 18.01.2020",
-              status: "В обработке",
-              statusColor: "green",
+              status: "Отложен",
+              statusColor: "red",
               sum: "5 599 ₽",
               jpgImg1: "./assets/images/orders/01.jpg",
               webpImg1: "./assets/images/orders/01.webp",
@@ -103,9 +102,9 @@
               {% include "../blocks/orders/status-info.twig" with {
                 status: {
                   name: "Статус:",
-                  value: "В доставке",
-                  colorValue: "green",
-                  addInfo: true,
+                  value: "Отложен",
+                  colorValue: "red",
+                  btn: true,
                 }
               } %}
             </div>
@@ -152,8 +151,8 @@
             order: {
               number: "ЗАКАЗ №83344",
               date: "от 13.02.2020",
-              status: "В обработке",
-              statusColor: "green",
+              status: "Отложен",
+              statusColor: "red",
               sum: "3 200 ₽",
               jpgImg3: "./assets/images/orders/03.jpg",
               webpImg3: "./assets/images/orders/03.webp",
@@ -164,9 +163,9 @@
               {% include "../blocks/orders/status-info.twig" with {
                 status: {
                   name: "Статус:",
-                  value: "В доставке",
-                  colorValue: "green",
-                  addInfo: true,
+                  value: "Отложен",
+                  colorValue: "red",
+                  btn: true,
                 }
               } %}
             </div>

@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   app.hiddenContent.init(); // blocks/contacts-form
   app.datepicker.init(); // blocks/datepicker
   app.validation.init(); // blocks/contacts-form
+  app.ordersToggle.init(); // blocks/orders
+  app.cardSlider.init(); // blocks/main-card
 
   new LazyLoad();
 

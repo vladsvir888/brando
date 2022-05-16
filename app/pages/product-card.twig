@@ -1,0 +1,93 @@
+{% extends "../blocks/layout/base.twig" %}
+{% block content %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+    isCatalogPage: true,
+  }
+} %}
+<main class="card-page pt8">
+  <div class="container">
+    {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumbs: {
+        item1: 'Главная',
+        item2: 'Каталог',
+        item3: 'Обувь',
+        item4: 'SCHUTZ',
+        item5: 'Женские зеленые кожаные сапоги Schutz 2457448',
+      }
+    } %}
+    <article class="card-page__product">
+      <div class="card-page__slider-block">
+        <div class="swiper galleryThumbs card-page__gallery-thumbs">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg" />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg" />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg" />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg" />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="swiper galleryMain card-page__gallery-main">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg"/>
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg"/>
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg"/>
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="./assets/images/pixel.png" data-srcset="./assets/images/card/01.webp" type="image/webp">
+                <img alt="img" class="card-page__slider-img lazy" src="./assets/images/pixel.png" data-src="./assets/images/card/01.jpg"/>
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next">
+          <img class="lazy card-page__btn-top" src="./assets/images/pixel.png" data-src="./assets/images/icons/slide-btn-prev.png" alt="img">
+        </div>
+        <div class="swiper-button-prev">
+          <img class="lazy card-page__btn-prev" src="./assets/images/pixel.png" data-src="./assets/images/icons/slide-btn-prev.png" alt="img">
+        </div>
+      </div>
+      <div class="card-page__product-content">
+
+      </div>
+    </article>
+    {% include "../blocks/viewed-products/viewed-products.twig" %}
+  </div>
+</main>
+{% include "../blocks/footer/footer.twig" %}
+{% endblock %}

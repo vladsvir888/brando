@@ -1,0 +1,29 @@
+.card-page {
+  &__product {
+    display: flex;
+  }
+
+  &__slider-block {
+    height: 67.1rem;
+    display: flex;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__gallery-main {
+    width: 51rem;
+  }
+
+  &__gallery-thumbs {
+    width: 12rem;
+  }
+
+  &__product-content {
+    width: 68.5rem;
+    border: 0.1rem solid var(--red);
+  }
+}

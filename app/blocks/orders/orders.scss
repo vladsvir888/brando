@@ -11,9 +11,19 @@
       border-bottom: 0.1rem solid var(--gray5);
     }
 
-    > * {
-      &:not(:last-child) {
-        margin-bottom: 1rem;
+    &.is-active {
+      > * {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .orders-section__btn-icon {
+        transform: rotate(180deg);
+      }
+
+      .orders-section__hidden-item {
+        opacity: 1;
       }
     }
   }
@@ -22,6 +32,14 @@
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 2rem 10rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    opacity: 0;
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .product-item {
@@ -32,6 +50,42 @@
 
     &:last-child {
       border-bottom: none;
+    }
+  }
+
+  &__header-item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: -2rem;
+
+    transition: all 0.3s;
+
+    > * {
+      margin-bottom: 2rem;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+
+        @media (max-width: $sm) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__header-wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 15rem;
+
+        @media (max-width: $sm) {
+          margin-right: 0;
+        }
+      }
     }
   }
 
@@ -73,6 +127,10 @@
     &--green {
       color: var(--green);
     }
+
+    &--red {
+      color: var(--red);
+    }
   }
 
   &__sum-order {
@@ -108,12 +166,35 @@
     width: 4rem;
     height: 4rem;
     border: none;
+    transition: fill 0.3s;
+
+    &:hover {
+      .orders-section__btn-icon {
+        fill: var(--green);
+      }
+    }
   }
 
   &__btn-icon {
     width: 0.8rem;
     height: 0.8rem;
     fill: var(--gray3);
+    pointer-events: none;
+    transition: transform 0.3s;
+  }
+
+  &__product-order {
+    @extend %flex-center-y;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 4rem;
+
+        @media (max-width: $lg) {
+          margin-right: 2rem;
+        }
+      }
+    }
   }
 }
 
@@ -152,6 +233,21 @@
       color: var(--red);
       font-weight: 700;
       text-transform: uppercase;
+    }
+  }
+
+  &__btn {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--green);
+    transition: background-color 0.3s;
+    padding: 1.8rem 4rem;
+    border: none;
+
+    &:hover {
+      background-color: var(--hover-green);
     }
   }
 }
