@@ -7,6 +7,7 @@ export const libsJsLink = [
   'node_modules/sweetalert2/dist/sweetalert2.min.js',
   'node_modules/nouislider/dist/nouislider.min.js',
   'node_modules/wnumb/wNumb.min.js',
+  'node_modules/glightbox/dist/js/glightbox.min.js',
 ];
 
 export const libsCssLink = [
@@ -14,4 +15,5 @@ export const libsCssLink = [
   'node_modules/animate.css/animate.min.css',
   'node_modules/sweetalert2/dist/sweetalert2.min.css',
   'node_modules/nouislider/dist/nouislider.min.css',
+  'node_modules/glightbox/dist/css/glightbox.min.css',
 ];

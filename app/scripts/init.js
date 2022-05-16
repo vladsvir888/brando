@@ -26,4 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   new LazyLoad();
 
   new WOW().init();
+
+  GLightbox({
+    loop: true,
+  });
 });

@@ -2,8 +2,8 @@ app.cardSlider = {
   init() {
     const galleryThumbs = new Swiper('.galleryThumbs', {
       loop: true,
-      spaceBetween: 20,
-      slidesPerView: 3,
+      spaceBetween: 10,
+      slidesPerView: 4,
       freeMode: true,
       watchSlidesProgress: true,
       direction: 'horizontal',
@@ -14,12 +14,12 @@ app.cardSlider = {
       },
     });
 
-    const galleryMain = new Swiper('.galleryMain', {
+    new Swiper('.galleryMain', {
       loop: true,
       spaceBetween: 10,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.card-page__gallery-thumbs .swiper-button-next',
+        prevEl: '.card-page__gallery-thumbs .swiper-button-prev',
       },
       thumbs: {
         swiper: galleryThumbs,
