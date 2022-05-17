@@ -575,6 +575,7 @@
     position: relative;
     color: var(--gray);
     background-color: var(--gray4);
+    cursor: text;
 
     &::after {
       position: absolute;

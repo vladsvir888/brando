@@ -138,4 +138,36 @@
     text-decoration: line-through;
     color: var(--gray3);
   }
+
+  &__sizes {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__sizes-title {
+    color: var(--gray3);
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+
+  &__sizes-block {
+    display: flex;
+
+    > * {
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__sizes-btn {
+    text-decoration: underline;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    border: none;
+    background-color: transparent;
+  }
 }

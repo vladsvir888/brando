@@ -108,6 +108,47 @@
             <span class="card-page__current-price">2 350 ₽</span>
             <span class="card-page__old-price">3 200 ₽</span>
           </div>
+          <form action="/" class="card-page__form">
+            <div class="card-page__form-top">
+              <div class="card-page__sizes">
+                <div class="card-page__sizes-inner">
+                  <p class="card-page__sizes-title">Размер</p>
+                  <div class="card-page__sizes-block">
+                    {% include "../blocks/catalog-filter/checkboxes/checkbox-size.twig" with {
+                      checkboxes: {
+                        items: [
+                          {
+                            size: "35",
+                          },
+                          {
+                            size: "36",
+                            disabled: true,
+                          },
+                          {
+                            size: "37",
+                            disabled: true,
+                          },
+                          {
+                            size: "38",
+                          },
+                          {
+                            size: "39",
+                          },
+                          {
+                            size: "40",
+                          },
+                        ]
+                      }
+                    } %}
+                  </div>
+                </div>
+                <button class="card-page__sizes-btn">
+                  Таблица размеров
+                </button>
+              </div>
+            </div>
+            <div class="card-page__form-bottom"></div>
+          </form>
         </div>
       </div>
     </article>
