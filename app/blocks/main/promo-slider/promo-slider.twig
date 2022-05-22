@@ -9,9 +9,9 @@
       </div>
       <div class="promo-slider__content-block">
         {% if promoSlider.slideTitle is defined %}
-          <h2 class="promo-slider__title">{{ promoSlider.slideTitle }}</h2>
+          <h2 class="promo-slider__title js-promo-title">{{ promoSlider.slideTitle }}</h2>
         {% endif %}
-        <div class="promo-slider__subtitle">{{ promoSlider.slideSubtitle }}</div>
+        <div class="promo-slider__subtitle js-promo-subtitle">{{ promoSlider.slideSubtitle }}</div>
         {% if promoSlider.slideDescr is defined %}
           <div class="promo-slider__descr">{{ promoSlider.slideDescr }}</div>
         {% endif %}

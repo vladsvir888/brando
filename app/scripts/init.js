@@ -35,4 +35,57 @@ document.addEventListener('DOMContentLoaded', () => {
   GLightbox({
     loop: true,
   });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const showAnim = gsap.from('.header', {
+    yPercent: -100,
+    paused: true,
+    duration: 0.5,
+  }).progress(1);
+
+  ScrollTrigger.create({
+    start: 'top top',
+    end: 99999,
+    onUpdate: (self) => {
+      self.direction === -1 ? showAnim.play() : showAnim.reverse()
+    },
+  });
+
+  gsap.from('.js-collection', {
+    scrollTrigger: '.js-collection',
+    duration: 1.5,
+    opacity: 0,
+    y: 200,
+    stagger: 0.3,
+  });
+
+  gsap.from('.js-trends', {
+    scrollTrigger: '.js-trends',
+    duration: 1,
+    opacity: 0,
+    x: -100,
+    stagger: 0.2,
+  });
+
+  gsap.from('.js-trends-img', {
+    scrollTrigger: '.js-trends-img',
+    duration: 1,
+    opacity: 0,
+    x: -150,
+  });
+
+  gsap.from('.js-promo-title', {
+    duration: 1,
+    opacity: 0,
+    x: -150,
+    delay: 0.4,
+  });
+
+  gsap.from('.js-promo-subtitle', {
+    duration: 1,
+    opacity: 0,
+    x: 150,
+    delay: 0.8,
+  });
 });
