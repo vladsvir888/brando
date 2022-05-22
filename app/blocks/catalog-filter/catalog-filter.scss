@@ -531,9 +531,17 @@
   @extend %flex-center-y;
   cursor: pointer;
 
+  position: relative;
+
   > * {
     &:not(:last-child) {
       margin-right: 1rem;
+    }
+  }
+
+  &:hover {
+    .alert {
+      opacity: 1;
     }
   }
 }
@@ -704,4 +712,35 @@
 .catalog-filter__top.is-active {
   top: 0;
   pointer-events: auto;
+}
+
+.alert {
+  position: absolute;
+  top: -6rem;
+  left: -4rem;
+  padding: 0.7rem 1.5rem;
+  width: 12rem;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  background-color: var(--white);
+  box-shadow: 0 0.4rem 0.8rem rgba(137, 138, 142, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &__triangle {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 1rem;
+    background-color: var(--white);
+    box-shadow: 0 0.4rem 0.8rem rgba(137, 138, 142, 0.15);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  }
+
+  @media (max-width: $lg) {
+    display: none;
+  }
 }

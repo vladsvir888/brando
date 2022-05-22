@@ -79,6 +79,28 @@
           <a class="popup__forget-link js-forget-btn" href="#">Забыли пароль?</a>
         {% endif %}
 
+        {% if popup.rating %}
+        <div class="popup__rating">
+          <input class="popup-input popup__rating-input" type="text" name="rating" placeholder="Ваша оценка">
+          <div class="rating-area">
+            <input type="radio" id="star-5" name="rating" value="5">
+            <label for="star-5" title="Оценка «5»"></label>
+            <input type="radio" id="star-4" name="rating" value="4">
+            <label for="star-4" title="Оценка «4»"></label>
+            <input type="radio" id="star-3" name="rating" value="3">
+            <label for="star-3" title="Оценка «3»"></label>
+            <input type="radio" id="star-2" name="rating" value="2">
+            <label for="star-2" title="Оценка «2»"></label>
+            <input type="radio" id="star-1" name="rating" value="1">
+            <label for="star-1" title="Оценка «1»"></label>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if popup.textarea %}
+        <textarea class="popup-input" name="review_text" placeholder="{{ popup.textarea }}"></textarea>
+        {% endif %}
+
         <button class="popup__btn" type="submit">{{ popup.btnText }}</button>
       </form>
 

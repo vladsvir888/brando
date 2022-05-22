@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
   height: 8rem;
   background-color: var(--black);
 
@@ -157,25 +157,44 @@
 
   // burger
   &__burger {
-    display: none;
+    display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 2.3rem;
-    height: 1.6rem;
+    width: 23px;
+    height: 16px;
     cursor: pointer;
 
-    @media (max-width: $lg) {
-      display: flex;
+    &:hover {
+      .header__burger-item {
+        background-color: var(--green);
+      }
+    }
+
+    &.is-active {
+      .header__burger-item {
+        &:first-child {
+          transform: translate(-3px, 7px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          display: none;
+        }
+
+        &:last-child {
+          transform: translate(-4px, -7px) rotate(-45deg);
+        }
+      }
     }
   }
 
   &__burger-item {
     display: block;
     width: 100%;
-    height: 0.2rem;
+    height: 2px;
     background-color: var(--white);
-    border-radius: 0.3rem;
+    border-radius: 0.3px;
     pointer-events: none;
+    transition: all 0.3s;
   }
 
   // auth-block

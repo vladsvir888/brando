@@ -54,5 +54,21 @@
     repeatPassw: false,
   }
 } %}
+{% include "../popups/popups.twig" with {
+  popup: {
+    sign: true,
+    id: "callback-popup",
+    class: "callback-popup",
+    title: "Позвоните нам",
+    btnText: "Отправить",
+    isPhone: true,
+    placeholderPhone: "Ваш телефон",
+    isSubtitle: true,
+    subtitleText: "Оставьте заявку, и мы свяжемся с вами в ближайшее время",
+    isName: true,
+    placeholderName: "Представьтесь",
+  }
+} %}
+{% include "../burger-menu/burger-menu.twig" %}
 {% block content %}{% endblock %}
 {% include "../link/link.twig" %}

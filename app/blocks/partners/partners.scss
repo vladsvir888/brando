@@ -223,31 +223,6 @@
     }
   }
 
-  &__brands-slider {
-    padding: 0 1.5rem;
-    height: 10rem;
-
-    .swiper-slide {
-      background-color: var(--gray4);
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      width: 4rem;
-      height: 4rem;
-
-      &::after {
-        content: none;
-      }
-
-      &:hover {
-        .partners__service-arrow {
-          fill: var(--green);
-        }
-      }
-    }
-  }
-
   &__brands-title {
     @extend %text-36;
     font-weight: 400;
@@ -256,9 +231,5 @@
     span {
       color: var(--green);
     }
-  }
-
-  &__brands-img {
-    @extend %cover;
   }
 }

@@ -1,12 +1,84 @@
 {% extends "../blocks/layout/base.twig" %}
 {% block content %}
+<div id="table-size" class="popup table-size-popup">
+  <div class="popup__wrap popup__wrap--white">
+    <button class="popup__btn-close" onclick="Swal.close(); return false;">
+      <svg class="popup__close-icon" viewBox="0 0 100 100">
+        <use xlink:href="./assets/images/sprite.svg#popup-close"></use>
+      </svg>
+    </button>
+    <table>
+      <tr>
+        <th>Размер</th>
+        <th>Длина стопы (см)</th>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td>22.6</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>23.2</td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td>24.1</td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td>24.7</td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td>25.5</td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td>26.2</td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td>26.5</td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td>27.7</td>
+      </tr>
+      <tr>
+        <td>42.5</td>
+        <td>28.3</td>
+      </tr>
+      <tr>
+        <td>43</td>
+        <td>28.7</td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td>29.7</td>
+      </tr>
+    </table>
+  </div>
+</div>
+{% include "../blocks/popups/popups.twig" with {
+  popup: {
+    sign: true,
+    id: "review-popup",
+    class: "review-popup",
+    title: "Оставьте отзыв о товаре",
+    btnText: "Отправить",
+    isSubtitle: true,
+    subtitleText: "Оставьте отзыв, и мы опубликуем его после проверки модератором",
+    textarea: "Отзыв",
+    rating: true,
+  }
+} %}
 {% include "../blocks/header/header.twig" with {
   header: {
     auth: false,
     isCatalogPage: true,
   }
 } %}
-<main class="card-page pt8">
+<main class="card-page js-card-wrap pt8">
   <div class="container">
     {% include "../blocks/breadcrumbs/breadcrumbs.twig" with {
       breadcrumbs: {
@@ -17,7 +89,7 @@
         item5: 'Женские зеленые кожаные сапоги Schutz 2457448',
       }
     } %}
-    <article class="card-page__product">
+    <article class="card-page__product js-card-section">
       <div class="card-page__slider-block">
         <div class="swiper galleryThumbs card-page__gallery-thumbs">
           <div class="swiper-wrapper">
@@ -96,6 +168,7 @@
               </a>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
       <div class="card-page__product-content">
@@ -109,11 +182,11 @@
             <span class="card-page__old-price">3 200 ₽</span>
           </div>
           <form action="/" class="card-page__form">
-            <div class="card-page__form-top">
-              <div class="card-page__sizes">
-                <div class="card-page__sizes-inner">
-                  <p class="card-page__sizes-title">Размер</p>
-                  <div class="card-page__sizes-block">
+            <div class="card-page__form-header">
+              <div class="card-page__sizes-text">Размер</div>
+              <div class="card-page__form-wrap">
+                <div class="card-page__form-sizes">
+                  <div class="card-page__form-sizes-wrap">
                     {% include "../blocks/catalog-filter/checkboxes/checkbox-size.twig" with {
                       checkboxes: {
                         items: [
@@ -141,18 +214,187 @@
                       }
                     } %}
                   </div>
+                  <button class="card-page__sizes-btn js-sizes-btn" type="button">
+                    Таблица размеров
+                  </button>
                 </div>
-                <button class="card-page__sizes-btn">
-                  Таблица размеров
-                </button>
+                <div class="card-page__form-colors">
+                  {% include "../blocks/catalog-filter/checkboxes/checkbox-color.twig" with {
+                    checkboxes: {
+                      items: [
+                        {
+                          color: "red",
+                          text: "",
+                          alert: "Красный",
+                        },
+                        {
+                          color: "black",
+                          text: "",
+                          alert: "Чёрный",
+                        },
+                        {
+                          color: "green",
+                          text: "",
+                          alert: "Зелёный",
+                        },
+                      ]
+                    }
+                  } %}
+                </div>
               </div>
             </div>
-            <div class="card-page__form-bottom"></div>
+            <div class="card-page__form-btns">
+              <button class="card-page__basket-btn">
+                Добавить в корзину
+                <svg class="card-page__basket-icon" viewBox="0 0 100 100">
+                  <use xlink:href="./assets/images/sprite.svg#basket"></use>
+                </svg>
+              </button>
+              <button class="card-page__like-btn">
+                <svg class="card-page__like-icon" viewBox="0 0 100 100">
+                  <use xlink:href="./assets/images/sprite.svg#heart"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="card-page__form-descr">
+              <button class="card-page__toggle-btn card-page__toggle-btn--border-top js-product-card-btn" type="button">
+                Характеристики
+                <div class="card-page__toggle-icon"></div>
+              </button>
+              <dl class="card-page__form-list js-card-hidden-list">
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Артикул</dt>
+                  <dd class="card-page__form-descr">2457448</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Бренд</dt>
+                  <dd class="card-page__form-descr">Schutz</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Размер</dt>
+                  <dd class="card-page__form-descr">38</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Сезон</dt>
+                  <dd class="card-page__form-descr">Весна-лето</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Цвет</dt>
+                  <dd class="card-page__form-descr">Темно-зеленый</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Материал верха</dt>
+                  <dd class="card-page__form-descr">100% кожа</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Материал подкладки</dt>
+                  <dd class="card-page__form-descr">100% кожа</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Страна бренда</dt>
+                  <dd class="card-page__form-descr">Италия</dd>
+                </div>
+                <div class="card-page__form-item">
+                  <dt class="card-page__form-term">Страна производитель</dt>
+                  <dd class="card-page__form-descr">Италия</dd>
+                </div>
+              </dl>
+            </div>
           </form>
         </div>
       </div>
     </article>
-    {% include "../blocks/viewed-products/viewed-products.twig" %}
+    <section class="card-page__info js-card-section">
+      <h2 class="card-page__info-title">Описание товара</h2>
+      <button class="card-page__toggle-btn js-product-card-btn" type="button">
+        Описание товара
+        <div class="card-page__toggle-icon"></div>
+      </button>
+      <div class="card-page__info-wrap js-card-hidden-list">
+        <div class="card-page__info-text">
+          Мы объединили 20+ наших официальных магазинов и более 100 брендов по всей стране на одном удобном сайте, чтобы сделать шопинг приятнее. Клиенты Brando – это молодые люди, которые любят приключения, отлично разбираются в новых трендах, любят музыку, активно пользуются социальными сетями и новыми технологиями.
+        </div>
+        <div class="card-page__info-text">
+          Мы объединили 20+ наших официальных магазинов и более 100 брендов по всей стране на одном удобном сайте, чтобы сделать шопинг приятнее. Клиенты Brando – это молодые люди, которые любят приключения, отлично разбираются в новых трендах, любят музыку, активно пользуются социальными сетями и новыми технологиями.
+        </div>
+        <dl class="card-page__info-list">
+          <div class="card-page__info-item">
+            <dt class="card-page__info-term">Подошва</dt>
+            <dd class="card-page__info-descr">Полиуретан</dd>
+          </div>
+          <div class="card-page__info-item">
+            <dt class="card-page__info-term">Высота каблука</dt>
+            <dd class="card-page__info-descr">8 см</dd>
+          </div>
+          <div class="card-page__info-item">
+            <dt class="card-page__info-term">Застежка</dt>
+            <dd class="card-page__info-descr">Без застежки</dd>
+          </div>
+          <div class="card-page__info-item">
+            <dt class="card-page__info-term">Полнота обуви</dt>
+            <dd class="card-page__info-descr">Средняя</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <section class="reviews js-card-section pb15">
+      <div class="reviews__header">
+        <h2 class="reviews__title">Отзывы</h2>
+        <button class="reviews__btn js-review-btn">Оставить отзыв</button>
+      </div>
+      <button class="card-page__toggle-btn js-product-card-btn" type="button">
+        Отзывы
+        <span>(12)</span>
+        <div class="card-page__toggle-icon"></div>
+      </button>
+      <div class="reviews__wrap js-card-hidden-list">
+        {% include "../blocks/reviews/reviews.twig" with {
+          reviews: {
+            review: [
+              {
+                name: "Аноним",
+                photo: false,
+                date: "5 июня 2020",
+                size: "Размер: 38",
+                texts: {
+                  text1: "Разнообразный и богатый опыт новая модель организационной деятельности представляет собой интересный эксперимент проверки направлений прогрессивного развития. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение новых предложений.",
+                },
+                images: "",
+                stars: {
+                  star1: "filled",
+                  star2: "filled",
+                  star3: "filled",
+                  star4: "unfilled",
+                  star5: "unfilled",
+                }
+              },
+              {
+                name: "Анна Петровна",
+                photo: true,
+                date: "22 июня 2020",
+                size: "Размер: 41",
+                texts: {
+                  text1: "Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки соответствующий условий активизации.",
+                  text2: "Равным образом постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.",
+                },
+                images: true,
+                stars: {
+                  star1: "filled",
+                  star2: "filled",
+                  star3: "filled",
+                  star4: "filled",
+                  star5: "filled",
+                }
+              }
+            ]
+          }
+        } %}
+      </div>
+      <button class="reviews__btn-more">Показать еще</button>
+    </section>
+    {% include "../blocks/viewed-products/viewed-products.twig" with {
+      title: "Просмотренные товары",
+    } %}
   </div>
 </main>
 {% include "../blocks/footer/footer.twig" %}

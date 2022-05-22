@@ -144,7 +144,9 @@
         {% include "../blocks/pagination/pagination.twig" %}
       </div>
     </section>
-    {% include "../blocks/viewed-products/viewed-products.twig" %}
+    {% include "../blocks/viewed-products/viewed-products.twig" with {
+      title: "Просмотренные товары",
+    } %}
   </div>
 </main>
 {% include "../blocks/footer/footer.twig" %}

@@ -21,6 +21,10 @@ app.cardSlider = {
         nextEl: '.card-page__gallery-thumbs .swiper-button-next',
         prevEl: '.card-page__gallery-thumbs .swiper-button-prev',
       },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
       thumbs: {
         swiper: galleryThumbs,
       },

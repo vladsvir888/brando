@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   app.validation.init(); // blocks/contacts-form
   app.ordersToggle.init(); // blocks/orders
   app.cardSlider.init(); // blocks/main-card
+  app.acc.init(); // blocks/main-card
+  app.sizesPopup.init(); // blocks/main-card
+  app.reviewPopup.init(); // blocks/main-card
+  app.burgerMenuSlider.init(); // blocks/burger-menu
+  app.burgerMenu.init(); // blocks/burger-menu
 
   new LazyLoad();
 

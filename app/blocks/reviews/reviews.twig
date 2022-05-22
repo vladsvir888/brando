@@ -1,0 +1,63 @@
+{% for review in reviews.review %}
+<div class="reviews__review">
+  <div class="reviews__review-start">
+    {% if review.photo %}
+    <picture>
+      <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/review/01.webp">
+      <img class="lazy reviews__img" src="./assets/images/pixel.png" data-src="./assets/images/review/01.jpg" alt="img">
+    </picture>
+    {% else %}
+      <div class="reviews__anonym">
+        <svg class="reviews__anonym-icon" viewBox="0 0 100 100">
+          <use xlink:href="./assets/images/sprite.svg#user"></use>
+        </svg>
+      </div>
+    {% endif %}
+    <div class="reviews__name-block">
+      <div class="reviews__name">{{ review.name }}</div>
+      <div class="reviews__date">{{ review.date }}</div>
+    </div>
+  </div>
+  <div class="reviews__review-end">
+    <div class="reviews__review-end-header">
+      <div class="reviews__stars">
+        {% for star in review.stars %}
+          {% if star == "filled" %}
+          <svg class="reviews__star reviews__star--filled" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#star"></use>
+          </svg>
+          {% else %}
+          <svg class="reviews__star reviews__star--unfilled" viewBox="0 0 100 100">
+            <use xlink:href="./assets/images/sprite.svg#star"></use>
+          </svg>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="reviews__size">{{ review.size }}</div>
+    </div>
+    <div class="reviews__block-text">
+      <p>
+        {{ review.texts.text1 }}
+      </p>
+      {% if review.texts.text2 %}
+      <p>
+        {{ review.texts.text2 }}
+      </p>
+      {% endif %}
+    </div>
+    {% if review.images %}
+    <div class="reviews__images">
+      <picture>
+        <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/review/02.webp">
+        <img class="lazy reviews__img" src="./assets/images/pixel.png" data-src="./assets/images/review/02.jpg" alt="img">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="./assets/images/pixel.png" data-srcset="./assets/images/review/03.webp">
+        <img class="lazy reviews__img" src="./assets/images/pixel.png" data-src="./assets/images/review/03.jpg" alt="img">
+      </picture>
+    </div>
+    {% endif %}
+    <div class="reviews__triangle"></div>
+  </div>
+</div>
+{% endfor %}

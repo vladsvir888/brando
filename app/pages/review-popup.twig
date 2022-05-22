@@ -1,0 +1,21 @@
+{% include "../blocks/head/head.twig" %}
+{% include "../blocks/popups/popups.twig" with {
+  popup: {
+    sign: true,
+    id: "review-popup",
+    active: "is-active",
+    class: "review-popup",
+    title: "Оставьте отзыв о товаре",
+    btnText: "Отправить",
+    isSubtitle: true,
+    subtitleText: "Оставьте отзыв, и мы опубликуем его после проверки модератором",
+    textarea: "Отзыв",
+    rating: true,
+  }
+} %}
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+{% include "../blocks/link/link.twig" %}

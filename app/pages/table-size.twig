@@ -1,0 +1,66 @@
+{% include "../blocks/head/head.twig" %}
+<div id="table-size" class="popup table-size-popup is-active">
+  <div class="popup__wrap popup__wrap--white">
+    <button class="popup__btn-close" onclick="Swal.close(); return false;">
+      <svg class="popup__close-icon" viewBox="0 0 100 100">
+        <use xlink:href="./assets/images/sprite.svg#popup-close"></use>
+      </svg>
+    </button>
+    <table>
+      <tr>
+        <th>Размер</th>
+        <th>Длина стопы (см)</th>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td>22.6</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>23.2</td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td>24.1</td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td>24.7</td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td>25.5</td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td>26.2</td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td>26.5</td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td>27.7</td>
+      </tr>
+      <tr>
+        <td>42.5</td>
+        <td>28.3</td>
+      </tr>
+      <tr>
+        <td>43</td>
+        <td>28.7</td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td>29.7</td>
+      </tr>
+    </table>
+  </div>
+</div>
+{% include "../blocks/header/header.twig" with {
+  header: {
+    auth: false,
+  }
+} %}
+{% include "../blocks/link/link.twig" %}

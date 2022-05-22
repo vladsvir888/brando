@@ -62,7 +62,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 10000;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -95,6 +95,53 @@
 
     @media (max-width: $md) {
       padding: 2rem;
+    }
+
+    &--white {
+      background-color: var(--white);
+      box-shadow: 0 0.4rem 0.8rem rgba(137, 138, 142, 0.15);
+
+      .popup__btn-close {
+        top: 2rem;
+        right: 2rem;
+      }
+
+      table {
+        width: 100%;
+
+        th {
+          font-size: 1.6rem;
+          line-height: 2.6rem;
+          font-weight: 700;
+          text-align: left;
+          padding: 0 2rem 2rem;
+          border-bottom: 0.1rem solid var(--gray5);
+          width: 50%;
+
+          &:first-child {
+            padding-left: 0;
+            border-right: 0.1rem solid var(--gray5);
+          }
+
+          @media (max-width: $sm) {
+            padding: 0 2rem 1rem;
+          }
+        }
+
+        td {
+          font-size: 1.4rem;
+          line-height: 2.4rem;
+          color: var(--gray);
+          padding: 1rem 2rem;
+          width: 50%;
+          text-align: left;
+
+          &:first-child {
+            padding-left: 0;
+            border-right: 0.1rem solid var(--gray5);
+          }
+        }
+      }
     }
   }
 
@@ -249,6 +296,14 @@
     position: relative;
   }
 
+  &__rating {
+    position: relative;
+  }
+
+  &__rating-input {
+    padding-right: 14rem;
+  }
+
   // &__passw-toggle {
   //   border: none;
   //   background-color: transparent;
@@ -268,6 +323,71 @@
   //     stroke: var(--gray3);
   //   }
   // }
+}
+
+.table-size-popup {
+  .popup__wrap {
+    padding: 3rem 4rem;
+
+    @media (max-width: $sm) {
+      padding: 3rem;
+    }
+  }
+
+  .popup__btn-close {
+    top: 2rem;
+    right: 2rem;
+  }
+
+  table {
+    width: 100%;
+
+    th {
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+      font-weight: 700;
+      text-align: left;
+      padding: 0 2rem 2rem;
+      border-bottom: 0.1rem solid var(--gray5);
+      width: 50%;
+
+      &:first-child {
+        padding-left: 0;
+        border-right: 0.1rem solid var(--gray5);
+      }
+
+      @media (max-width: $sm) {
+        padding: 0 2rem 1rem;
+      }
+    }
+
+    td {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      color: var(--gray);
+      padding: 1rem 2rem;
+      width: 50%;
+
+      &:first-child {
+        padding-left: 0;
+        border-right: 0.1rem solid var(--gray5);
+      }
+    }
+  }
+
+  &.is-active {
+    .popup__wrap {
+      width: 60rem;
+
+      @media (max-width: $lg) {
+        width: 45rem;
+      }
+
+      @media (max-width: $sm) {
+        width: 35rem;
+      }
+    }
+  }
 }
 
 // ordering-popup
@@ -315,6 +435,49 @@
       margin-bottom: 2rem;
     }
   }
+}
+
+// рейтинг
+.rating-area {
+  width: 12rem;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.rating-area:not(:checked) > input {
+  display: none;
+}
+
+.rating-area:not(:checked) > label {
+  width: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black2);
+}
+
+.rating-area:not(:checked) > label::before {
+  content: '★';
+}
+
+.rating-area > input:checked ~ label {
+  color: var(--green);
+}
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+  color: var(--green);
+}
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+  color: var(--green);
 }
 
 .swal2-popup {

@@ -4,6 +4,14 @@
     <div class="checkbox-color-wrap">
       <span class="checkbox-color-style checkbox-color-style--{{ checkbox.color }}"></span>
     </div>
-    <span class="checkbox-color-style-text">{{ checkbox.text }}</span>
+    {% if checkbox.text %}
+      <span class="checkbox-color-style-text">{{ checkbox.text }}</span>
+    {% endif %}
+    {% if checkbox.alert %}
+    <div class="alert">
+      {{ checkbox.alert }}
+      <div class="alert__triangle"></div>
+    </div>
+    {% endif %}
   </label>
 {% endfor %}

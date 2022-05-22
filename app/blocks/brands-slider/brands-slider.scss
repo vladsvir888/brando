@@ -1,0 +1,28 @@
+.brands-slider {
+  padding: 0 1.5rem;
+  height: 10rem;
+
+  .swiper-slide {
+    background-color: var(--gray4);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 4rem;
+    height: 4rem;
+
+    &::after {
+      content: none;
+    }
+
+    &:hover {
+      .brands-slider__icon {
+        fill: var(--green);
+      }
+    }
+  }
+
+  &__img {
+    @extend %cover;
+  }
+}
